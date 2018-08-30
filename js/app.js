@@ -15,7 +15,7 @@ var customSearch;
 		const $wrapper = $('header .wrapper');
 		const $comment = $('.s-comment', $wrapper);
 		const $toc = $('.s-toc', $wrapper);
-		const $top = $('.s-top', $wrapper);
+		const $top = $('.s-top',$wrapper);
 
 		$wrapper.find('.nav-sub .logo').text(window.subData.title);
 		let pos = document.body.scrollTop;
