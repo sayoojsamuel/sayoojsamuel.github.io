@@ -27,6 +27,8 @@
 
 
 
+    <link rel="dns-prefetch" href="https://onedark.disqus.com"/>
+
 
 
 
@@ -83,6 +85,8 @@
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
+        
+            
         
 
     
@@ -462,6 +466,21 @@
 
     <!-- Categories  -->
     
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
 
     <!-- Pages  -->
     
@@ -477,6 +496,14 @@
     
 
     <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">2</span>
+            </a>
+        </li>
+        
     
 </ul>
 
@@ -499,13 +526,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            Theme - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
 
 <!-- Help & Support -->
 <!--
@@ -526,12 +546,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Sidebar Image -->
     
-    <span id="footer-image">
-        <a href="https://www.sayoojsamuel.com/" target="_blank" title="upyun_logo">
-            <img src="/img/upyun_logo.svg" alt="upyun_logo"><!--
-     --></a>
-    </span>
-
 
 </aside>
 
@@ -554,7 +568,7 @@ It will not impact the appearance and can give developers a lot of support :)
         <div class="mdl-mini-footer--left-section sns-list">
     <!-- Twitter -->
     
-        <a href="https://twitter.com/twitter" target="_blank">
+        <a href="https://twitter.com/sayoojsamuel" target="_blank">
             <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
                 <span class="visuallyhidden">Twitter</span>
             </button><!--
@@ -563,7 +577,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Facebook -->
     
-        <a href="https://www.facebook.com/facebook" target="_blank">
+        <a href="https://www.facebook.com/sayoojsamuel" target="_blank">
             <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
                 <span class="visuallyhidden">Facebook</span>
             </button><!--
@@ -572,7 +586,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Google + -->
     
-        <a href="https://www.google.com/" target="_blank">
+        <a href="https://www.google.com/+sayoojsamuel" target="_blank">
             <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
                 <span class="visuallyhidden">Google Plus</span>
             </button><!--
@@ -584,14 +598,32 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Instagram -->
     
+        <a href="https://www.instagram.com/sayoojsamuel" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <span class="visuallyhidden">Instagram</span>
+            </button><!--
+     --></a>
+    
 
     <!-- Tumblr -->
     
 
     <!-- Github -->
     
+        <a href="https://github.com/sayoojsamuel" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
 
     <!-- LinkedIn -->
+    
+        <a href="https://linkedin.com/in/sayoojsamuel" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
     
 
     <!-- Zhihu -->
@@ -683,6 +715,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//onedark.disqus.com/count.js" async></script>
+
 
 
 
@@ -698,6 +733,8 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+
 
 
 <!-- Window Load -->
@@ -708,6 +745,8 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
     
     
 </script>
@@ -742,7 +781,7 @@ It will not impact the appearance and can give developers a lot of support :)
     var copyrightNow = new Date().getFullYear();
     var textContent = document.querySelector('span[year]')
 
-    copyrightSince = 0000;
+    copyrightSince = 2017;
     if (copyrightSince === copyrightNow||copyrightSince === 0000) {
         textContent.textContent = copyrightNow
     } else {
