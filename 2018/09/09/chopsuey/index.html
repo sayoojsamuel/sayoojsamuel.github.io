@@ -46,8 +46,6 @@
     
     <title>
         
-            Archives: 2018/8 | 
-        
         OneDark
     </title>
 
@@ -218,7 +216,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="OneDark">
-    <meta name="msapplication-starturl" content="sayoojsamuel.github.io/archives/2018/08/">
+    <meta name="msapplication-starturl" content="sayoojsamuel.github.io/2018/09/09/chopsuey/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="OneDark">
@@ -233,13 +231,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="sayoojsamuel.github.io/archives/2018/08/">
+    <meta property="og:url" content="sayoojsamuel.github.io/2018/09/09/chopsuey/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Archives: 2018/8 | OneDark">
+    <meta property="og:title" content="OneDark">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Sun Sep 09 2018 14:50:05 GMT+0530">
+        <meta property="article:modified_time" content="Sun Sep 09 2018 14:49:37 GMT+0530">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,13 +248,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="sayoojsamuel.github.io/archives/2018/08/index.html" />
+        <link rel="canonical" href="sayoojsamuel.github.io/2018/09/09/chopsuey/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "sayoojsamuel.github.io/2018/09/09/chopsuey/index.html",
+    "headline": "",
+    "datePublished": "Sun Sep 09 2018 14:50:05 GMT+0530",
+    "dateModified": "Sun Sep 09 2018 14:49:37 GMT+0530",
+    "author": {
+        "@type": "Person",
+        "name": "Sayooj Samuel",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "ONE DARK"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "OneDark",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -287,94 +318,225 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#noxCTF-2018-Chop-Suey"><span class="post-toc-number">1.</span> <span class="post-toc-text">noxCTF 2018: Chop-Suey</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#To-construct-qinv"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">To construct qinv,</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-complete-script"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">The complete script:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flag"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Flag</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/08/26/Principium/">Principium</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to my first Post!
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/08/26/Principium/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Sayooj Samuel's avatar">
-            </div>
-            <div>
-                <strong>Sayooj Samuel</strong>
-                <span>Aug 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Sayooj Samuel</strong>
+        <span>Sep 09, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=sayoojsamuel.github.io/2018/09/09/chopsuey/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=sayoojsamuel.github.io/2018/09/09/chopsuey/index.html&via=Sayooj Samuel" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=sayoojsamuel.github.io/2018/09/09/chopsuey/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=sayoojsamuel.github.io/2018/09/09/chopsuey/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="noxCTF-2018-Chop-Suey"><a href="#noxCTF-2018-Chop-Suey" class="headerlink" title="noxCTF 2018: Chop-Suey"></a>noxCTF 2018: Chop-Suey</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 118<br><strong>Solves:</strong> 235<br><strong>Description:</strong><br>‘’’<br>Today I ate in a Chinese restaurant and got myself a fortune cookie. These things usually contain a note with a nice sentence or phrase, but mine had numbers in it instead! Can you help me find the meaning of the numbers?</p>
+<p>p = 8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229<br>q = 12640674973996472769176047937170883420927050821480010581593137135372473880595613737337630629752577346147039284030082593490776630572584959954205336880228469<br>dp = 6500795702216834621109042351193261530650043841056252930930949663358625016881832840728066026150264693076109354874099841380454881716097778307268116910582929<br>dq = 783472263673553449019532580386470672380574033551303889137911760438881683674556098098256795673512201963002175438762767516968043599582527539160811120550041<br>c = 24722305403887382073567316467649080662631552905960229399079107995602154418176056335800638887527614164073530437657085079676157350205351945222989351316076486573599576041978339872265925062764318536089007310270278526159678937431903862892400747915525118983959970607934142974736675784325993445942031372107342103852<br>‘’’</p>
+<p>So if you have learned Chinese Remainder Theorem, you would definitely have known this optimisation technique for RSA.<br>It states:<br><code>dp = d (mod p-1)</code><br><code>dq = d (mod q-1)</code><br>This technique is more faster than the Textbook RSA and with out <strong>p</strong> and <strong>q</strong>, you’d be having a really tough time. Just take a glimpse into what <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem" target="_blank" rel="noopener">Wiki</a>#Using_the_Chinese_remainder_algorithm) has to say.<br>But for the funny part, they have already provided us with p and q values! We can easily recompute <code>qinv</code>, to get the flag.</p>
+<h3 id="To-construct-qinv"><a href="#To-construct-qinv" class="headerlink" title="To construct qinv,"></a>To construct <strong>qinv</strong>,</h3><p>‘’’python<br>qinv = modinv(q, p)<br>m2 = pow(c, dq, q)<br>m1 = pow(c, dp, p)<br>h = (qinv <em> (m1 - m2)) % p<br>m = m2 + h </em> q<br>‘’’</p>
+<h3 id="The-complete-script"><a href="#The-complete-script" class="headerlink" title="The complete script:"></a>The complete script:</h3><p>‘’’python<br>from gmpy2 import *</p>
+<p>p=8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229</p>
+<p>q=12640674973996472769176047937170883420927050821480010581593137135372473880595613737337630629752577346147039284030082593490776630572584959954205336880228469</p>
+<p>dp=6500795702216834621109042351193261530650043841056252930930949663358625016881832840728066026150264693076109354874099841380454881716097778307268116910582929</p>
+<p>dq=783472263673553449019532580386470672380574033551303889137911760438881683674556098098256795673512201963002175438762767516968043599582527539160811120550041</p>
+<p>c=24722305403887382073567316467649080662631552905960229399079107995602154418176056335800638887527614164073530437657085079676157350205351945222989351316076486573599576041978339872265925062764318536089007310270278526159678937431903862892400747915525118983959970607934142974736675784325993445942031372107342103852</p>
+<p>def egcd(a, b):<br>    if a == 0:<br>        return (b, 0, 1)<br>    else:<br>        g, y, x = egcd(b % a, a)<br>        return (g, x - (b // a) * y, y)</p>
+<p>def modinv(a, m):<br>    g, x, y = egcd(a, m)<br>    if g != 1:<br>        raise Exception(‘modular inverse does not exist’)<br>    else:<br>        return x % m</p>
+<p>qinv = modinv(q, p)<br>m2 = pow(c, dq, q)<br>m1 = pow(c, dp, p)<br>h = (qinv <em> (m1 - m2)) % p<br>m = m2 + h </em> q<br>print(m)</p>
+<p>txt = hex(m)[2:]<br>print ‘’.join([chr(int(‘’.join(c), 16)) for c in zip(txt[0::2],txt[1::2])])</p>
+<p>‘’’</p>
+<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>noxCTF{W31c0m3_70_Ch1n470wn}</strong></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/08/26/Principium/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
