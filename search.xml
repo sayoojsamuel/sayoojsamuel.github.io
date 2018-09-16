@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>flatcrypto</title>
+      <link href="/2018/09/16/flatcrypto/"/>
+      <url>/2018/09/16/flatcrypto/</url>
+      <content type="html"><![CDATA[<p>Writeup from CSAW QUALS CTF’18</p><h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong></p><pre><code>no logos or branding for this bugTake your pick nc crypto.chal.csaw.io 8040 nc crypto.chal.csaw.io 8041 nc crypto.chal.csaw.io 8042 nc crypto.chal.csaw.io 8043flag is not in flag format. flag is PROBLEM_KEY</code></pre><p><strong>Attachments:</strong> serv-distribute.py</p><pre><code class="python">import zlibimport osfrom Crypto.Cipher import AESfrom Crypto.Util import CounterENCRYPT_KEY = bytes.fromhex(&#39;0000000000000000000000000000000000000000000000000000000000000000&#39;)# Determine this key.# Character set: lowercase letters and underscorePROBLEM_KEY = &#39;not_the_flag&#39;def encrypt(data, ctr):    return AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))    while True:        f = input(&quot;Encrypting service\n&quot;)        if len(f) &lt; 20:            continue        enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)), Counter.new(64, prefix=os.urandom(8)))        print(&quot;%s%s&quot; %(enc, chr(len(enc))))</code></pre><p>Again, it’s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,</p><pre><code class="python">enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)),    |Counter.new(64, prefix=os.urandom(8)))</code></pre><p>is where we target out exploit.  Our input <code>f</code> is appended to the PROBLEM_KEY, compressed and then encrypted without padding.   This zlib compression is a huge vuln, and we forge a custom input such that the plaintext is compressed before encryption. Thus, it results in reduced length of the ciphertext.</p><p>It is mentioned that the character set is lowercase ascii and underscore.<br>I have created a bruteforce script, in which, the brute starts with character ‘a’ till ‘z’ multiplied 20 times.<br>The length of the ciphertext decreases when the <strong>brute_char</strong> matches with the <strong>last byte</strong> of the PRODUCT_KEY. For the second last byte, we repeat the <strong>brute_char+lastbyte</strong> 20 times. Similarly the third last byte, which follows as<br><strong>brute_char+secondlast+lastbyte</strong> 20 times.</p><p>This will eventually give us the flag, which is not in the flag format.</p><h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from pwn import *context.log_level=&quot;error&quot;import stringchars = string.ascii_lowercase + &quot;_&quot;flag = &quot;&quot;    for j in range(30):    print &quot;flag:&quot;,flag    for i in chars:        io = remote(&quot;crypto.chal.csaw.io&quot;,8040)        print io.recv()        io.sendline((i+flag)*20)        print (i+flag)        out = io.recvline()        l = ord(out[-2])        print &quot;len=&quot;,l, i        if l&lt;35:                  #&lt;== You have to edit this manually            print i            flag=i+flag            break        io.close()</code></pre><h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>crime_doesnt_have_a_logo</strong></p><h3 id="Plaid-CTF-Compression"><a href="#Plaid-CTF-Compression" class="headerlink" title="Plaid CTF Compression"></a>Plaid CTF Compression</h3><p>A note to all the readers, that this challenge was the exact copy of the 2013 Plaid CTF challenge - Compression.  Dosen’t know why they have to give the exact same question.  Follow the writeup for the challenge for detailed explanation.</p>]]></content>
+      
+      <categories>
+          
+          <category> Writeups </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> zlib, compression, CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>babycrypto</title>
       <link href="/2018/09/16/babycrypto/"/>
       <url>/2018/09/16/babycrypto/</url>

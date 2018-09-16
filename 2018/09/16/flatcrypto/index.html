@@ -50,7 +50,7 @@
     
     <title>
         
-            Principium | 
+            flatcrypto | 
         
         OneDark
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="v4d3r holds the blog">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",zlib, compression, CTF">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="OneDark">
-    <meta name="msapplication-starturl" content="sayoojsamuel.github.io/2018/08/26/Principium/">
+    <meta name="msapplication-starturl" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="OneDark">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="sayoojsamuel.github.io/2018/08/26/Principium/">
+    <meta property="og:url" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Principium | OneDark">
+    <meta property="og:title" content="flatcrypto | OneDark">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="v4d3r holds the blog">
-    
+    <meta property="og:article:tag" content="zlib, compression, CTF"> 
 
     
-        <meta property="article:published_time" content="Sun Aug 26 2018 17:34:34 GMT+0530">
-        <meta property="article:modified_time" content="Sun Aug 26 2018 17:37:36 GMT+0530">
+        <meta property="article:published_time" content="Sun Sep 16 2018 23:34:34 GMT+0530">
+        <meta property="article:modified_time" content="Mon Sep 17 2018 03:09:17 GMT+0530">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="sayoojsamuel.github.io/2018/08/26/Principium/index.html" />
+        <link rel="canonical" href="sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "sayoojsamuel.github.io/2018/08/26/Principium/index.html",
-    "headline": "Principium",
-    "datePublished": "Sun Aug 26 2018 17:34:34 GMT+0530",
-    "dateModified": "Sun Aug 26 2018 17:37:36 GMT+0530",
+    "mainEntityOfPage": "sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html",
+    "headline": "flatcrypto",
+    "datePublished": "Sun Sep 16 2018 23:34:34 GMT+0530",
+    "dateModified": "Mon Sep 17 2018 03:09:17 GMT+0530",
     "author": {
         "@type": "Person",
         "name": "Sayooj Samuel",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "",
+    "keywords": ",zlib, compression, CTF",
     "description": "v4d3r holds the blog",
 }
 </script>
@@ -366,7 +366,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#This-is-totally-crazy"><span class="post-toc-number">1.</span> <span class="post-toc-text">This is totally crazy</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OK-See-the-wonders-at"><span class="post-toc-number">2.</span> <span class="post-toc-text">OK - See the wonders at</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CSAW-CTF-QUALS-2018-Flatcrypto"><span class="post-toc-number">1.</span> <span class="post-toc-text">CSAW CTF QUALS 2018: Flatcrypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Complete-Script"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Complete Script</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flag"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Flag</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Plaid-CTF-Compression"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Plaid CTF Compression</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -398,7 +398,7 @@
         
     
             <p class="article-headline-p">
-                Principium
+                flatcrypto
             </p>
         </div>
 
@@ -417,7 +417,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Sayooj Samuel</strong>
-        <span>Aug 26, 2018</span>
+        <span>Sep 16, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -435,6 +435,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/zlib-compression-CTF/">zlib, compression, CTF</a>
+    </ul>
+    
 
     <!-- Share -->
     
@@ -449,7 +458,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Principium&url=sayoojsamuel.github.io/2018/08/26/Principium/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Principium&url=sayoojsamuel.github.io/2018/08/26/Principium/index.html&via=Sayooj Samuel" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&via=Sayooj Samuel" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -467,7 +476,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=sayoojsamuel.github.io/2018/08/26/Principium/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -476,7 +485,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=sayoojsamuel.github.io/2018/08/26/Principium/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -501,12 +510,66 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Welcome to my first Post!</p>
-<h2 id="This-is-totally-crazy"><a href="#This-is-totally-crazy" class="headerlink" title="This is totally crazy"></a>This is totally crazy</h2><pre><code>&#39;&#39;&#39;bash
-    sudo kill -me
+        <p>Writeup from CSAW QUALS CTF’18</p>
+<h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong></p>
+<pre><code>no logos or branding for this bug
 
-&#39;&#39;&#39;
-</code></pre><h2 id="OK-See-the-wonders-at"><a href="#OK-See-the-wonders-at" class="headerlink" title="OK - See the wonders at"></a>OK - See the wonders at</h2><p>See more at: [Sayooj Samuel] (sayoojsamuel.github.io)</p>
+Take your pick nc crypto.chal.csaw.io 8040 nc crypto.chal.csaw.io 8041 nc crypto.chal.csaw.io 8042 nc crypto.chal.csaw.io 8043
+
+flag is not in flag format. flag is PROBLEM_KEY
+</code></pre><p><strong>Attachments:</strong> serv-distribute.py</p>
+<pre><code class="python">import zlib
+import os
+
+from Crypto.Cipher import AES
+from Crypto.Util import Counter
+
+ENCRYPT_KEY = bytes.fromhex(&#39;0000000000000000000000000000000000000000000000000000000000000000&#39;)
+# Determine this key.
+# Character set: lowercase letters and underscore
+PROBLEM_KEY = &#39;not_the_flag&#39;
+
+def encrypt(data, ctr):
+    return AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))
+
+    while True:
+        f = input(&quot;Encrypting service\n&quot;)
+        if len(f) &lt; 20:
+            continue
+        enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)), Counter.new(64, prefix=os.urandom(8)))
+        print(&quot;%s%s&quot; %(enc, chr(len(enc))))
+</code></pre>
+<p>Again, it’s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,</p>
+<pre><code class="python">enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)),    |Counter.new(64, prefix=os.urandom(8)))
+</code></pre>
+<p>is where we target out exploit.  Our input <code>f</code> is appended to the PROBLEM_KEY, compressed and then encrypted without padding.   This zlib compression is a huge vuln, and we forge a custom input such that the plaintext is compressed before encryption. Thus, it results in reduced length of the ciphertext.</p>
+<p>It is mentioned that the character set is lowercase ascii and underscore.<br>I have created a bruteforce script, in which, the brute starts with character ‘a’ till ‘z’ multiplied 20 times.<br>The length of the ciphertext decreases when the <strong>brute_char</strong> matches with the <strong>last byte</strong> of the PRODUCT_KEY. For the second last byte, we repeat the <strong>brute_char+lastbyte</strong> 20 times. Similarly the third last byte, which follows as<br><strong>brute_char+secondlast+lastbyte</strong> 20 times.</p>
+<p>This will eventually give us the flag, which is not in the flag format.</p>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from pwn import *
+context.log_level=&quot;error&quot;
+import string
+chars = string.ascii_lowercase + &quot;_&quot;
+flag = &quot;&quot;    
+
+for j in range(30):
+    print &quot;flag:&quot;,flag
+    for i in chars:
+        io = remote(&quot;crypto.chal.csaw.io&quot;,8040)
+        print io.recv()
+        io.sendline((i+flag)*20)
+        print (i+flag)
+        out = io.recvline()
+        l = ord(out[-2])
+        print &quot;len=&quot;,l, i
+        if l&lt;35:                  #&lt;== You have to edit this manually
+            print i
+            flag=i+flag
+            break
+        io.close()
+
+</code></pre>
+<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>crime_doesnt_have_a_logo</strong></p>
+<h3 id="Plaid-CTF-Compression"><a href="#Plaid-CTF-Compression" class="headerlink" title="Plaid CTF Compression"></a>Plaid CTF Compression</h3><p>A note to all the readers, that this challenge was the exact copy of the 2013 Plaid CTF challenge - Compression.  Dosen’t know why they have to give the exact same question.  Follow the writeup for the challenge for detailed explanation.</p>
 
         
     
@@ -525,8 +588,8 @@
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'sayoojsamuel.github.io/2018/08/26/Principium/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'sayoojsamuel.github.io/2018/08/26/Principium/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'sayoojsamuel.github.io/2018/09/16/flatcrypto/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'sayoojsamuel.github.io/2018/09/16/flatcrypto/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 <script type="text/ls-javascript" id="disqus-thread-script">
@@ -556,19 +619,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/09/chopsuey/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/09/16/babycrypto/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
