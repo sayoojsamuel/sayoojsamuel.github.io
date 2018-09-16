@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>babycrypto</title>
+      <link href="/2018/09/16/babycrypto/"/>
+      <url>/2018/09/16/babycrypto/</url>
+      <content type="html"><![CDATA[<p>Writeup from CSAW QUALS CTF’18</p><h1 id="CSAW-CTF-QUALS-2018-Babycrypto"><a href="#CSAW-CTF-QUALS-2018-Babycrypto" class="headerlink" title="CSAW CTF QUALS 2018: Babycrypto"></a>CSAW CTF QUALS 2018: Babycrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 50<br><strong>Solves:</strong> 295<br><strong>Description:</strong></p><pre><code>yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeetsingle yeet yeeted with single yeet == 0yeeetwhat is yeet?yeet is yeet</code></pre><p><strong>Attachments:</strong> ciphertext.txt<br><code>PRO TIP</code>:Tell you what, the smallest crypto will always be XOR in CSAW!  And <code>a XOR a == 0</code> ==&gt;</p><pre><code>|single yeet yeeted with single yeet == 0</code></pre><p>And that’s the hint! to suggest it is a XOR challenge. So, we start with the attachment file, which includes a <code>base64</code> encoded ciphertext.<br>Perform a single byte xor, and you’ll find the flag in character 255.</p><pre><code class="bash">Leon is a programmer who aspires to create programs that help people do less. He wants to put automation first, and scalability alongside. He dreams of a world where the endless and the infinite become realities to mankind, and where the true value of life is preserved.flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}</code></pre><h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">import stringdef xor(a,b):    return chr(ord(i)^ord(j) for i,j in zip(a,b))ct = open(&#39;ciphertext.txt&#39;,&#39;rb&#39;).read().decode(&#39;base64&#39;)for i in range(256):    pt = xor(ct,chr(i)*len(ct))    if all(c in string.printable for c in pt): print pt</code></pre><h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}</strong></p>]]></content>
+      
+      <categories>
+          
+          <category> Writeups </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Xor, yeet, , CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Marty0ska1</title>
       <link href="/2018/09/14/marty0ska1/"/>
       <url>/2018/09/14/marty0ska1/</url>
