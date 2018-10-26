@@ -50,7 +50,7 @@
     
     <title>
         
-            flatcrypto | 
+            pyQueue | 
         
         OneDark
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="v4d3r holds the blog">
-    <meta name="keywords" content=",zlib, compression, CTF">
+    <meta name="keywords" content=",Bruteforce, Python, Queue, AES, ECB, Bsides, CTF">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="OneDark">
-    <meta name="msapplication-starturl" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
+    <meta name="msapplication-starturl" content="sayoojsamuel.github.io/2018/10/26/pyQueue/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="OneDark">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
+    <meta property="og:url" content="sayoojsamuel.github.io/2018/10/26/pyQueue/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="flatcrypto | OneDark">
+    <meta property="og:title" content="pyQueue | OneDark">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="v4d3r holds the blog">
-    <meta property="og:article:tag" content="zlib, compression, CTF"> 
+    <meta property="og:article:tag" content="Bruteforce, Python, Queue, AES, ECB, Bsides, CTF"> 
 
     
-        <meta property="article:published_time" content="Sun Sep 16 2018 23:34:34 GMT+0530">
-        <meta property="article:modified_time" content="Sun Sep 30 2018 21:19:14 GMT+0530">
+        <meta property="article:published_time" content="Fri Oct 26 2018 17:19:34 GMT+0530">
+        <meta property="article:modified_time" content="Fri Oct 26 2018 18:11:20 GMT+0530">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html" />
+        <link rel="canonical" href="sayoojsamuel.github.io/2018/10/26/pyQueue/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html",
-    "headline": "flatcrypto",
-    "datePublished": "Sun Sep 16 2018 23:34:34 GMT+0530",
-    "dateModified": "Sun Sep 30 2018 21:19:14 GMT+0530",
+    "mainEntityOfPage": "sayoojsamuel.github.io/2018/10/26/pyQueue/index.html",
+    "headline": "pyQueue",
+    "datePublished": "Fri Oct 26 2018 17:19:34 GMT+0530",
+    "dateModified": "Fri Oct 26 2018 18:11:20 GMT+0530",
     "author": {
         "@type": "Person",
         "name": "Sayooj Samuel",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",zlib, compression, CTF",
+    "keywords": ",Bruteforce, Python, Queue, AES, ECB, Bsides, CTF",
     "description": "v4d3r holds the blog",
 }
 </script>
@@ -366,7 +366,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CSAW-CTF-QUALS-2018-Flatcrypto"><span class="post-toc-number">1.</span> <span class="post-toc-text">CSAW CTF QUALS 2018: Flatcrypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Complete-Script"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Complete Script</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flag"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Flag</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Plaid-CTF-Compression"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Plaid CTF Compression</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Bsides-CTF-2018-pyQueue"><span class="post-toc-number">1.</span> <span class="post-toc-text">Bsides CTF 2018: pyQueue</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Solution"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Key-Recovery"><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">Key Recovery</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BruteForce"><span class="post-toc-number">1.1.0.2.</span> <span class="post-toc-text">BruteForce</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Complete-Script"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Complete Script</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flag"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Flag</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Author’s-Note"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Author’s Note</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -398,7 +398,7 @@
         
     
             <p class="article-headline-p">
-                flatcrypto
+                pyQueue
             </p>
         </div>
 
@@ -417,7 +417,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Sayooj Samuel</strong>
-        <span>Sep 16, 2018</span>
+        <span>Oct 26, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -441,7 +441,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/zlib-compression-CTF/">zlib, compression, CTF</a>
+        <a class="post_tag-link" href="/tags/Bruteforce-Python-Queue-AES-ECB-Bsides-CTF/">Bruteforce, Python, Queue, AES, ECB, Bsides, CTF</a>
     </ul>
     
 
@@ -458,7 +458,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=pyQueue&url=sayoojsamuel.github.io/2018/10/26/pyQueue/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -467,7 +467,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&via=Sayooj Samuel" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=pyQueue&url=sayoojsamuel.github.io/2018/10/26/pyQueue/index.html&via=Sayooj Samuel" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -476,7 +476,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=sayoojsamuel.github.io/2018/10/26/pyQueue/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -485,7 +485,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=sayoojsamuel.github.io/2018/10/26/pyQueue/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -510,66 +510,121 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Writeup from CSAW QUALS CTF’18</p>
-<h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong></p>
-<pre><code>no logos or branding for this bug
+        <p>Writeup from Bsides CTF’18</p>
+<h1 id="Bsides-CTF-2018-pyQueue"><a href="#Bsides-CTF-2018-pyQueue" class="headerlink" title="Bsides CTF 2018: pyQueue"></a>Bsides CTF 2018: pyQueue</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 150<br><strong>Solves:</strong> 43<br><strong>Description:</strong></p>
+<pre><code>Easy Right?
+</code></pre><p><strong>Attachments:</strong> pyQueue.tar.xz</p>
+<p>The attachment contains two files</p>
+<pre><code>1. encrypt.py
+2. ci.pher.text
+</code></pre><p>Let’s analyse the <code>encrypt.py</code></p>
+<pre><code class="python">
+key = AES_Key()
+ct=&quot;&quot;
+MAC = 0
+for List in slice(FLAG):
+    for block in List:
+        cipher = AES.new(key.shuffle(), AES.MODE_ECB)
+        ct+= cipher.encrypt(block)
+        MAC ^= int(ct[-16:].encode(&#39;hex&#39;),16)
 
-Take your pick nc crypto.chal.csaw.io 8040 nc crypto.chal.csaw.io 8041 nc crypto.chal.csaw.io 8042 nc crypto.chal.csaw.io 8043
+MAC ^= int(key.shuffle().encode(&#39;hex&#39;),16)
 
-flag is not in flag format. flag is PROBLEM_KEY
-</code></pre><p><strong>Attachments:</strong> serv-distribute.py</p>
-<pre><code class="python">import zlib
-import os
-
-from Crypto.Cipher import AES
-from Crypto.Util import Counter
-
-ENCRYPT_KEY = bytes.fromhex(&#39;0000000000000000000000000000000000000000000000000000000000000000&#39;)
-# Determine this key.
-# Character set: lowercase letters and underscore
-PROBLEM_KEY = &#39;not_the_flag&#39;
-
-def encrypt(data, ctr):
-    return AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))
-
-    while True:
-        f = input(&quot;Encrypting service\n&quot;)
-        if len(f) &lt; 20:
-            continue
-        enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)), Counter.new(64, prefix=os.urandom(8)))
-        print(&quot;%s%s&quot; %(enc, chr(len(enc))))
-</code></pre>
-<p>Again, it’s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,</p>
-<pre><code class="python">enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)),    |Counter.new(64, prefix=os.urandom(8)))
-</code></pre>
-<p>is where we target out exploit.  Our input <code>f</code> is appended to the PROBLEM_KEY, compressed and then encrypted without padding.   This zlib compression is a huge vuln, and we forge a custom input such that the plaintext is compressed before encryption. Thus, it results in reduced length of the ciphertext.</p>
-<p>It is mentioned that the character set is lowercase ascii and underscore.<br>I have created a bruteforce script, in which, the brute starts with character ‘a’ till ‘z’ multiplied 20 times.<br>The length of the ciphertext decreases when the <strong>brute_char</strong> matches with the <strong>last byte</strong> of the PRODUCT_KEY. For the second last byte, we repeat the <strong>brute_char+lastbyte</strong> 20 times. Similarly the third last byte, which follows as<br><strong>brute_char+secondlast+lastbyte</strong> 20 times.</p>
-<p>This will eventually give us the flag, which is not in the flag format.</p>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from pwn import *
-context.log_level=&quot;error&quot;
-import string
-chars = string.ascii_lowercase + &quot;_&quot;
-flag = &quot;&quot;    
-
-for j in range(30):
-    print &quot;flag:&quot;,flag
-    for i in chars:
-        io = remote(&quot;crypto.chal.csaw.io&quot;,8040)
-        print io.recv()
-        io.sendline((i+flag)*20)
-        print (i+flag)
-        out = io.recvline()
-        l = ord(out[-2])
-        print &quot;len=&quot;,l, i
-        if l&lt;35:                  #&lt;== You have to edit this manually
-            print i
-            flag=i+flag
-            break
-        io.close()
+open(&quot;ci.pher.text&quot;,&#39;wb&#39;).write(str(MAC) +&quot;:&quot;+ ct.encode(&#39;hex&#39;))
 
 </code></pre>
-<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>crime_doesnt_have_a_logo</strong></p>
-<h3 id="Plaid-CTF-Compression"><a href="#Plaid-CTF-Compression" class="headerlink" title="Plaid CTF Compression"></a>Plaid CTF Compression</h3><p>A note to all the readers, that this challenge was the exact copy of the 2013 Plaid CTF challenge - Compression.  Dosen’t know why they have to give the exact same question.  Follow the writeup for the challenge for detailed explanation.</p>
+<p>Well, it’s an AES challenge on first sight. Three points to note, </p>
+<ol>
+<li>Each time an AES instance is created, a new <strong>key</strong> is being used as a resultant of <code>key.shuffle()</code></li>
+<li><strong>MAC</strong> is generated as the <code>XOR</code> of all the <code>ct</code> blocks. At the end, <strong>MAC</strong> is xored with <strong>key</strong> after being shuffled for one last time.<pre><code class="python">MAC ^= int(key.shuffle().encode(&#39;hex&#39;),16)
+</code></pre>
+</li>
+<li><strong>ci.pher.text</strong> is of the format <em>MAC:CipherText</em> </li>
+</ol>
+<p>A peek into the Key generation, </p>
+<pre><code class="python">class AES_Key:
+    def __init__(self):
+        self.key=list(os.urandom(16))
+
+    def enqueue(self):
+        self.key+=get_random_bytes(1)
+
+    def dequeue(self):
+        self.key=self.key[1:]
+
+    def size(self):
+        return len(self.key)
+
+    def shuffle(self):
+        self.dequeue()
+        self.enqueue()
+        assert self.size()==AES.block_size
+        return &quot;&quot;.join(self.key)
+
+</code></pre>
+<p>This reveals that <code>shuffle()</code> method just removes the first byte of the 16 byte <strong>key</strong> and appends a random byte at the end. The complete setup was implemented as a Queue :P. This makes it a whole lot easier to bruteforce!</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h4 id="Key-Recovery"><a href="#Key-Recovery" class="headerlink" title="Key Recovery"></a>Key Recovery</h4><p>Now, to recover the <strong>key</strong>, we just have to <code>XOR</code> the <strong>MAC</strong> with all the <code>ct</code> blocks. The resultant is the key.shuffled() value.</p>
+<pre><code class="python"># Calculate key
+last_key = int(MAC)
+for i in ct:
+    last_key ^= int(i.encode(&#39;hex&#39;), 16)
+last_key = long_to_bytes(last_key)
+</code></pre>
+<h4 id="BruteForce"><a href="#BruteForce" class="headerlink" title="BruteForce"></a>BruteForce</h4><p>All you need to do now is to bruteforce over 256 possible character. That is, remove the last byte of <code>assumed key</code> and add the bruteforce character at the beginning. The <strong>key</strong> pair for the <code>plaintext</code> where most of the starting characters are printable is what we are looking for.</p>
+<pre><code class="python">def brute():
+    key = last_key
+    pt = &quot;&quot;
+    for i in range(2,-1,-1):
+        key = key[:-1]
+        for ch in range(256):
+            cipher = AES.new(chr(ch)+key,AES.MODE_ECB)
+            recover = cipher.decrypt(ct[i])
+            if(all(c in printable for c in recover[:10])):
+                pt = recover + pt
+                key = chr(ch)+key
+                break
+    return pt
+</code></pre>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from Crypto.Cipher import AES
+from Crypto.Util.number import *
+from string import printable
+
+def split_by(msg,step):
+    return [msg[i:i+step] for i in range(0,len(msg),16)]
+
+data = open(&quot;ci.pher.text&quot;,&#39;rb&#39;).read()
+MAC,ct = data.split(&quot;:&quot;)
+
+ct = split_by(ct.decode(&#39;hex&#39;),16)
+
+# Calculate key
+last_key = int(MAC)
+for i in ct:
+    last_key ^= int(i.encode(&#39;hex&#39;), 16)
+last_key = long_to_bytes(last_key)
+
+# Brute Joy!!!
+key = last_key
+
+def brute():
+    key = last_key
+    pt = &quot;&quot;
+    for i in range(2,-1,-1):
+        key = key[:-1]
+        for ch in range(256):
+            cipher = AES.new(chr(ch)+key,AES.MODE_ECB)
+            recover = cipher.decrypt(ct[i])
+            if(all(c in printable for c in recover[:10])):
+                pt = recover + pt
+                key = chr(ch)+key
+                break
+    return pt
+
+print brute()
+
+</code></pre>
+<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{H4il_bUggi3s!_qu3u3_k3y_2_h0t_4_w4rmUp}</strong></p>
+<h3 id="Author’s-Note"><a href="#Author’s-Note" class="headerlink" title="Author’s Note"></a>Author’s Note</h3><p>I authored this challenge for Bsides CTF’18. I know that these kinda bruteforce challenges makes it hard for pro’s to play with, but will be pretty interesting for the beginners. I’m just saying :p</p>
 
         
     
@@ -588,8 +643,8 @@ for j in range(30):
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'sayoojsamuel.github.io/2018/09/16/flatcrypto/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'sayoojsamuel.github.io/2018/09/16/flatcrypto/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'sayoojsamuel.github.io/2018/10/26/pyQueue/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'sayoojsamuel.github.io/2018/10/26/pyQueue/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 <script type="text/ls-javascript" id="disqus-thread-script">
@@ -619,21 +674,13 @@ for j in range(30):
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/30/bigboss/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/16/babycrypto/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/30/bigboss/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
