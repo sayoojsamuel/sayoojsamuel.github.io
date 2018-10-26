@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="sayoojsamuel.github.io/"/>
-  <updated>2018-10-26T13:04:28.084Z</updated>
+  <updated>2018-10-26T15:57:33.932Z</updated>
   <id>sayoojsamuel.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tile-mate</title>
+    <link href="sayoojsamuel.github.io/2018/10/26/tile-mate/"/>
+    <id>sayoojsamuel.github.io/2018/10/26/tile-mate/</id>
+    <published>2018-10-26T14:49:34.000Z</published>
+    <updated>2018-10-26T15:57:33.932Z</updated>
+    
+    <content type="html"><![CDATA[<p>Writeup from Bsides CTF’18</p><h1 id="Bsides-CTF-2018-Tile-Mate"><a href="#Bsides-CTF-2018-Tile-Mate" class="headerlink" title="Bsides CTF 2018: Tile Mate"></a>Bsides CTF 2018: Tile Mate</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 35<br><strong>Description:</strong></p><pre><code class="bash">David and Toni rides scooter. Everyone knows except them!</code></pre><p><strong>Attachments:</strong> tile_mate.tar.xz</p><p>This is an easy <code>XOR</code> challenge, with a custom plaintext substitution before the actual <code>XOR</code> process.<br>Again, the attachment contains two files</p><ol><li>encrypt.py</li><li>ci.pher.text</li></ol><pre><code class="python">from itertools import cycle as scooterfrom secret import FLAG, KEYfrom hashlib import sha384assert FLAG.islower()assert len(KEY) == 10def drive(Helmet, Petrol):    return &#39;&#39;.join(chr(ord(David)^ord(Toni)) for David,Toni in zip(Helmet,scooter(Petrol)))f = lambda x: sha384(x).digest()[(ord(x)+7)%48]encrypted = drive(map(f,FLAG),KEY.decode(&#39;hex&#39;)).encode(&#39;hex&#39;)open(&#39;ci.pher.text&#39;,&#39;wb&#39;).write(encrypted)</code></pre><p>Hmm, it is pretty obvious <code>drive()</code> is the <strong>Repeated Key <code>XOR</code></strong> function, although the function looks cool! (Atleast the ‘Helmet,scooter(Petrol)’ part :p)..<br><code>f</code> being another function which returns the <code>x+7</code>th index character from the sha384 hash of <code>x</code>.<br>The ciphertext is simply the XOR(f(pt),key).</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="python">assert FLAG.islower()assert len(KEY) == 10</code></pre><p>This suggests that the <strong>flag</strong> is composed of lowercase characters (digits and punctuation included) and the <strong>key</strong> length is 5 bytes (hex 10). </p><h4 id="Key-Recovery"><a href="#Key-Recovery" class="headerlink" title="Key Recovery"></a>Key Recovery</h4><p>Since the flag format is <code>flag{</code>, we can recover the <strong>key</strong> by XORing f(“<code>flag{</code>“) with <code>ciphertext</code>.</p><pre><code class="python">hashed_flag = &#39;&#39;.join(map(f,&quot;flag{&quot;))key = xor(hashed_flag,ct)hashed_pt = xor(ct,key)</code></pre><p>Now this <code>hashed_pt</code> is nothing but the hash of the <code>flag</code>.</p><h4 id="Getting-to-the-Flag"><a href="#Getting-to-the-Flag" class="headerlink" title="Getting to the Flag"></a>Getting to the Flag</h4><pre><code>f = lambda x: sha384(x).digest()[(ord(x)+7)%48]</code></pre><p>This custom hash is not reversible, but we can still create a map with all possible characters, cause that’s just 90 possibilities ( Remember the lowercase?)</p><pre><code class="python">chars = string.ascii_lowercase+string.digits+string.punctuationtable = dict(zip(map(f,chars),chars))flag=&quot;&quot;for i in hashed_pt: flag+=table[i]print flag</code></pre><p>The <code>table</code> contains the dict of hash, and character as key, value pair.<br>For characters in <code>hashed_pt</code>, we find the preimage of the hash from the table. And you hold the flag for the challenge, TADA!!!</p><h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from hashlib import sha384from itertools import cycleimport stringdef xor(msg,key):    return &#39;&#39;.join(chr(ord(i)^ord(j)) for i,j in zip(msg,cycle(key)))f = lambda x: sha384(x).digest()[(ord(x)+7)%48]ct = open(&#39;ci.pher.text&#39;,&#39;rb&#39;).read().decode(&#39;hex&#39;)hashed_flag = &#39;&#39;.join(map(f,&quot;flag{&quot;))key = xor(hashed_flag,ct)hashed_pt = xor(ct,key)chars = string.ascii_lowercase+string.digits+string.punctuationtable = dict(zip(map(f,chars),chars))flag=&quot;&quot;for i in hashed_pt: flag+=table[i]print flag</code></pre><h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{cr1b_dr4g_w1th_u1tr4_c00l_sc00ter!}</strong></p><h3 id="Author’s-Note"><a href="#Author’s-Note" class="headerlink" title="Author’s Note"></a>Author’s Note</h3><p>Okay, this is the second challenge I authored for BSides CTF’18 being organised at Delhi, the first one being <a href="https://sayoojsamuel.github.io/2018/10/26/pyQueue/">pyQueue</a>.</p><h2 id="4-Line-exploit"><a href="#4-Line-exploit" class="headerlink" title="4 Line exploit"></a>4 Line exploit</h2><p>Just a show-off, </p><pre><code class="python">from hashlib import sha384;from itertools import cycle;import stringxor,f,ct,chars=lambda (msg,key): &#39;&#39;.join(chr(ord(i)^ord(j)) for i,j in zip(msg,cycle(key))),lambda x: sha384(x).digest()[(ord(x)+7)%48],open(&#39;ci.pher.text&#39;,&#39;rb&#39;).read().decode(&#39;hex&#39;),string.ascii_lowercase+string.digits+string.punctuationhashed_pt,flag,table=xor((ct,xor((&#39;&#39;.join(map(f,&quot;flag{&quot;)),ct)))),&quot;&quot;,dict(zip(map(f,chars),chars))for i in hashed_pt: flag+=table[i];print flag</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Writeup from Bsides CTF’18&lt;/p&gt;
+&lt;h1 id=&quot;Bsides-CTF-2018-Tile-Mate&quot;&gt;&lt;a href=&quot;#Bsides-CTF-2018-Tile-Mate&quot; class=&quot;headerlink&quot; title=&quot;Bsides C
+      
+    
+    </summary>
+    
+      <category term="Writeups" scheme="sayoojsamuel.github.io/categories/Writeups/"/>
+    
+    
+      <category term="XOR, Python, Custom, Hash, Delhi, , Bsides, CTF" scheme="sayoojsamuel.github.io/tags/XOR-Python-Custom-Hash-Delhi-Bsides-CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>pyQueue</title>
