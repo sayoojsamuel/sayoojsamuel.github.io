@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="En">
-    <head>
+    <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -1122,6 +1122,11 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1540720443803')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
     
 </html>
