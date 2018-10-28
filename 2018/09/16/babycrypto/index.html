@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="En">
+<html style="display: none;" lang="en">
     <head><link rel=manifest href=/manifest.json>
     <meta charset="utf-8">
     <!--
@@ -50,7 +50,7 @@
     
     <title>
         
-            babycrypto | 
+            Babycrypto | 
         
         OneDark
     </title>
@@ -239,7 +239,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="sayoojsamuel.github.io/2018/09/16/babycrypto/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="babycrypto | OneDark">
+    <meta property="og:title" content="Babycrypto | OneDark">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="v4d3r&#39;s Blog for Cyber Geeks">
     <meta property="og:article:tag" content="Xor, yeet, , CTF"> 
@@ -267,7 +267,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "sayoojsamuel.github.io/2018/09/16/babycrypto/index.html",
-    "headline": "babycrypto",
+    "headline": "Babycrypto",
     "datePublished": "Sun Sep 16 2018 22:34:34 GMT+0530",
     "dateModified": "Sat Oct 27 2018 20:13:29 GMT+0530",
     "author": {
@@ -393,7 +393,7 @@
         
     
             <p class="article-headline-p">
-                babycrypto
+                Babycrypto
             </p>
         </div>
 
@@ -453,7 +453,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=babycrypto&url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Babycrypto&url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -462,7 +462,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=babycrypto&url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&via=Sayooj Samuel" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Babycrypto&url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&via=Sayooj Samuel" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&title=babycrypto" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&title=Babycrypto" target="_blank">
             <li class="mdl-menu__item">
                 Share to LinkedIn
             </li>
@@ -501,7 +501,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&text=babycrypto" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=sayoojsamuel.github.io/2018/09/16/babycrypto/index.html&text=Babycrypto" target="_blank">
             <li class="mdl-menu__item">
                 Share to Telegram
             </li>
@@ -518,30 +518,11 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Writeup from CSAW QUALS CTF’18</p>
-<h1 id="CSAW-CTF-QUALS-2018-Babycrypto"><a href="#CSAW-CTF-QUALS-2018-Babycrypto" class="headerlink" title="CSAW CTF QUALS 2018: Babycrypto"></a>CSAW CTF QUALS 2018: Babycrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 50<br><strong>Solves:</strong> 295<br><strong>Description:</strong></p>
-<pre><code>yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet
-
-single yeet yeeted with single yeet == 0
-
-yeeet
-
-what is yeet?
-
-yeet is yeet
-</code></pre><p><strong>Attachments:</strong> ciphertext.txt<br><code>PRO TIP</code>:Tell you what, the smallest crypto will always be XOR in CSAW!  And <code>a XOR a == 0</code> ==&gt;</p>
-<pre><code>|single yeet yeeted with single yeet == 0
-</code></pre><p>And that’s the hint! to suggest it is a XOR challenge. So, we start with the attachment file, which includes a <code>base64</code> encoded ciphertext.<br>Perform a single byte xor, and you’ll find the flag in character 255.</p>
-<pre><code class="bash">Leon is a programmer who aspires to create programs that help people do less. He wants to put automation first, and scalability alongside. He dreams of a world where the endless and the infinite become realities to mankind, and where the true value of life is preserved.flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}
-</code></pre>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">import string
-def xor(a,b):
-    return chr(ord(i)^ord(j) for i,j in zip(a,b))
-
-ct = open(&#39;ciphertext.txt&#39;,&#39;rb&#39;).read().decode(&#39;base64&#39;)
-for i in range(256):
-    pt = xor(ct,chr(i)*len(ct))
-    if all(c in string.printable for c in pt): print pt
-</code></pre>
+<h1 id="CSAW-CTF-QUALS-2018-Babycrypto"><a href="#CSAW-CTF-QUALS-2018-Babycrypto" class="headerlink" title="CSAW CTF QUALS 2018: Babycrypto"></a>CSAW CTF QUALS 2018: Babycrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 50<br><strong>Solves:</strong> 295<br><strong>Description:</strong><br><figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet</span><br><span class="line"></span><br><span class="line"><span class="built_in">single</span> yeet yeeted <span class="keyword">with</span> <span class="built_in">single</span> yeet == <span class="number">0</span></span><br><span class="line"></span><br><span class="line">yeeet</span><br><span class="line"></span><br><span class="line">what <span class="keyword">is</span> yeet?</span><br><span class="line"></span><br><span class="line">yeet <span class="keyword">is</span> yeet</span><br></pre></td></tr></table></figure></p>
+<p><strong>Attachments:</strong> ciphertext.txt<br><code>PRO TIP</code>:Tell you what, the smallest crypto will always be XOR in CSAW!  And <code>a XOR a == 0</code> ==&gt;<br><figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">|<span class="built_in">single</span> yeet yeeted <span class="keyword">with</span> <span class="built_in">single</span> yeet == <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>And that’s the hint! to suggest it is a XOR challenge. So, we start with the attachment file, which includes a <code>base64</code> encoded ciphertext.<br>Perform a single byte xor, and you’ll find the flag in character 255.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Leon is a programmer who aspires to create programs that <span class="built_in">help</span> people <span class="keyword">do</span> less. He wants to put automation first, and scalability alongside. He dreams of a world <span class="built_in">where</span> the endless and the infinite become realities to mankind, and <span class="built_in">where</span> the <span class="literal">true</span> value of life is preserved.flag&#123;diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xor</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> chr(ord(i)^ord(j) <span class="keyword">for</span> i,j <span class="keyword">in</span> zip(a,b))</span><br><span class="line"></span><br><span class="line">ct = open(<span class="string">'ciphertext.txt'</span>,<span class="string">'rb'</span>).read().decode(<span class="string">'base64'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">    pt = xor(ct,chr(i)*len(ct))</span><br><span class="line">    <span class="keyword">if</span> all(c <span class="keyword">in</span> string.printable <span class="keyword">for</span> c <span class="keyword">in</span> pt): <span class="keyword">print</span> pt</span><br></pre></td></tr></table></figure>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}</strong></p>
 
         
@@ -1050,7 +1031,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
                 </main>
             </div>
         <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1540729626467')
+  navigator.serviceWorker.register('/sw.js?t=1540733026051')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
