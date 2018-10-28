@@ -24,6 +24,8 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/2018/10/28/Site-Updated/');
+
   precacheUrls.push('/2018/10/26/tile-mate/');
 
   precacheUrls.push('/2018/10/26/pyQueue/');
@@ -31,8 +33,6 @@ var precacheUrls = [];
   precacheUrls.push('/2018/09/30/bigboss/');
 
   precacheUrls.push('/2018/09/16/flatcrypto/');
-
-  precacheUrls.push('/2018/09/16/babycrypto/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};

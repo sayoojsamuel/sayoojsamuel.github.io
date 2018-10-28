@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="sayoojsamuel.github.io/"/>
-  <updated>2018-10-26T15:57:33.932Z</updated>
+  <updated>2018-10-28T10:27:40.673Z</updated>
   <id>sayoojsamuel.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cool New Hexo</title>
+    <link href="sayoojsamuel.github.io/2018/10/28/Site-Updated/"/>
+    <id>sayoojsamuel.github.io/2018/10/28/Site-Updated/</id>
+    <published>2018-10-28T10:18:00.000Z</published>
+    <updated>2018-10-28T10:27:40.673Z</updated>
+    
+    <content type="html"><![CDATA[<p>Wow, This looks cool! </p><p>Let me tell you a fact, that Hexo is totally cool! To start with, I’m writing my blog with the <strong>Hexo Admin</strong> plugin. This blog is build with cool new features, far more than I can list out here. </p><p>Guys, this will be the beginning of series of blog posts to handle Hexo Blogging. Not much to say right now. Till next time, Adios!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Wow, This looks cool! &lt;/p&gt;
+&lt;p&gt;Let me tell you a fact, that Hexo is totally cool! To start with, I’m writing my blog with the &lt;strong&gt;Hexo
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="sayoojsamuel.github.io/categories/Hexo/"/>
+    
+    
+      <category term="hexo" scheme="sayoojsamuel.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>tile-mate</title>
