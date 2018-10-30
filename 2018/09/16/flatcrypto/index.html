@@ -57,7 +57,7 @@
     
     <title>
         
-            Flatcrypto | 
+            flatcrypto | 
         
         OneDark
     </title>
@@ -246,7 +246,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Flatcrypto | OneDark">
+    <meta property="og:title" content="flatcrypto | OneDark">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="v4d3r&#39;s Blog for Cyber Geeks">
     <meta property="og:article:tag" content="zlib, compression, CTF"> 
@@ -274,7 +274,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html",
-    "headline": "Flatcrypto",
+    "headline": "flatcrypto",
     "datePublished": "Sun Sep 16 2018 23:34:34 GMT+0530",
     "dateModified": "Sun Sep 30 2018 21:19:14 GMT+0530",
     "author": {
@@ -400,7 +400,7 @@
         
     
             <p class="article-headline-p">
-                Flatcrypto
+                flatcrypto
             </p>
         </div>
 
@@ -460,7 +460,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&pic=sayoojsamuel.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&via=Sayooj Samuel" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=flatcrypto&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&via=Sayooj Samuel" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -496,7 +496,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&title=Flatcrypto" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&title=flatcrypto" target="_blank">
             <li class="mdl-menu__item">
                 Share to LinkedIn
             </li>
@@ -508,7 +508,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&text=Flatcrypto" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=sayoojsamuel.github.io/2018/09/16/flatcrypto/index.html&text=flatcrypto" target="_blank">
             <li class="mdl-menu__item">
                 Share to Telegram
             </li>
@@ -525,13 +525,63 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Writeup from CSAW QUALS CTF’18</p>
-<h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong><br><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">no logos or branding <span class="keyword">for</span> this bug</span><br><span class="line"></span><br><span class="line">Take your pick nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8040</span> nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8041</span> nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8042</span> nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8043</span></span><br><span class="line"></span><br><span class="line">flag is not <span class="keyword">in</span> flag format. flag is PROBLEM_KEY</span><br></pre></td></tr></table></figure></p>
-<p><strong>Attachments:</strong> serv-distribute.py<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.Util <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">ENCRYPT_KEY = bytes.fromhex(<span class="string">'0000000000000000000000000000000000000000000000000000000000000000'</span>)</span><br><span class="line"><span class="comment"># Determine this key.</span></span><br><span class="line"><span class="comment"># Character set: lowercase letters and underscore</span></span><br><span class="line">PROBLEM_KEY = <span class="string">'not_the_flag'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span><span class="params">(data, ctr)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        f = input(<span class="string">"Encrypting service\n"</span>)</span><br><span class="line">        <span class="keyword">if</span> len(f) &lt; <span class="number">20</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        enc = encrypt(bytes((PROBLEM_KEY + f).encode(<span class="string">'utf-8'</span>)), Counter.new(<span class="number">64</span>, prefix=os.urandom(<span class="number">8</span>)))</span><br><span class="line">        print(<span class="string">"%s%s"</span> %(enc, chr(len(enc))))</span><br></pre></td></tr></table></figure></p>
-<p>Again, it’s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">enc = encrypt(bytes((PROBLEM_KEY + f).encode(<span class="string">'utf-8'</span>)),    |Counter.new(<span class="number">64</span>, prefix=os.urandom(<span class="number">8</span>)))</span><br></pre></td></tr></table></figure></p>
+<h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong></p>
+<pre><code>no logos or branding for this bug
+
+Take your pick nc crypto.chal.csaw.io 8040 nc crypto.chal.csaw.io 8041 nc crypto.chal.csaw.io 8042 nc crypto.chal.csaw.io 8043
+
+flag is not in flag format. flag is PROBLEM_KEY
+</code></pre><p><strong>Attachments:</strong> serv-distribute.py</p>
+<pre><code class="python">import zlib
+import os
+
+from Crypto.Cipher import AES
+from Crypto.Util import Counter
+
+ENCRYPT_KEY = bytes.fromhex(&#39;0000000000000000000000000000000000000000000000000000000000000000&#39;)
+# Determine this key.
+# Character set: lowercase letters and underscore
+PROBLEM_KEY = &#39;not_the_flag&#39;
+
+def encrypt(data, ctr):
+    return AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))
+
+    while True:
+        f = input(&quot;Encrypting service\n&quot;)
+        if len(f) &lt; 20:
+            continue
+        enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)), Counter.new(64, prefix=os.urandom(8)))
+        print(&quot;%s%s&quot; %(enc, chr(len(enc))))
+</code></pre>
+<p>Again, it’s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,</p>
+<pre><code class="python">enc = encrypt(bytes((PROBLEM_KEY + f).encode(&#39;utf-8&#39;)),    |Counter.new(64, prefix=os.urandom(8)))
+</code></pre>
 <p>is where we target out exploit.  Our input <code>f</code> is appended to the PROBLEM_KEY, compressed and then encrypted without padding.   This zlib compression is a huge vuln, and we forge a custom input such that the plaintext is compressed before encryption. Thus, it results in reduced length of the ciphertext.</p>
 <p>It is mentioned that the character set is lowercase ascii and underscore.<br>I have created a bruteforce script, in which, the brute starts with character ‘a’ till ‘z’ multiplied 20 times.<br>The length of the ciphertext decreases when the <strong>brute_char</strong> matches with the <strong>last byte</strong> of the PRODUCT_KEY. For the second last byte, we repeat the <strong>brute_char+lastbyte</strong> 20 times. Similarly the third last byte, which follows as<br><strong>brute_char+secondlast+lastbyte</strong> 20 times.</p>
 <p>This will eventually give us the flag, which is not in the flag format.</p>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.log_level=<span class="string">"error"</span></span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line">chars = string.ascii_lowercase + <span class="string">"_"</span></span><br><span class="line">flag = <span class="string">""</span>    </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">30</span>):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"flag:"</span>,flag</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> chars:</span><br><span class="line">        io = remote(<span class="string">"crypto.chal.csaw.io"</span>,<span class="number">8040</span>)</span><br><span class="line">        <span class="keyword">print</span> io.recv()</span><br><span class="line">        io.sendline((i+flag)*<span class="number">20</span>)</span><br><span class="line">        <span class="keyword">print</span> (i+flag)</span><br><span class="line">        out = io.recvline()</span><br><span class="line">        l = ord(out[<span class="number">-2</span>])</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"len="</span>,l, i</span><br><span class="line">        <span class="keyword">if</span> l&lt;<span class="number">35</span>:                  <span class="comment">#&lt;== You have to edit this manually</span></span><br><span class="line">            <span class="keyword">print</span> i</span><br><span class="line">            flag=i+flag</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        io.close()</span><br></pre></td></tr></table></figure>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from pwn import *
+context.log_level=&quot;error&quot;
+import string
+chars = string.ascii_lowercase + &quot;_&quot;
+flag = &quot;&quot;    
+
+for j in range(30):
+    print &quot;flag:&quot;,flag
+    for i in chars:
+        io = remote(&quot;crypto.chal.csaw.io&quot;,8040)
+        print io.recv()
+        io.sendline((i+flag)*20)
+        print (i+flag)
+        out = io.recvline()
+        l = ord(out[-2])
+        print &quot;len=&quot;,l, i
+        if l&lt;35:                  #&lt;== You have to edit this manually
+            print i
+            flag=i+flag
+            break
+        io.close()
+
+</code></pre>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>crime_doesnt_have_a_logo</strong></p>
 <h3 id="Plaid-CTF-Compression"><a href="#Plaid-CTF-Compression" class="headerlink" title="Plaid CTF Compression"></a>Plaid CTF Compression</h3><p>A note to all the readers, that this challenge was the exact copy of the 2013 Plaid CTF challenge - Compression.  Dosen’t know why they have to give the exact same question.  Follow the writeup for the challenge for detailed explanation.</p>
 
@@ -586,7 +636,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/30/bigboss/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/10/26/pyQueue/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -692,7 +742,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -710,7 +760,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Article/">Article<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Entertainment/">Entertainment<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Writeups/">Writeups<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/Article/">Article<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Writeups/">Writeups<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -734,7 +784,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">9</span>
             </a>
         </li>
         
@@ -1041,7 +1091,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
                 </main>
             </div>
         <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1540734904114')
+  navigator.serviceWorker.register('/sw.js?t=1540914176873')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

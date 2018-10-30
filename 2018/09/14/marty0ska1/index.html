@@ -528,10 +528,14 @@
 <h1 id="SEC-T-CTF-2018-Marty0ska1"><a href="#SEC-T-CTF-2018-Marty0ska1" class="headerlink" title="SEC-T CTF 2018: Marty0ska1"></a>SEC-T CTF 2018: Marty0ska1</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 51<br><strong>Solves:</strong> 60+</p>
 <p><strong>Service:</strong> nc crypto.sect.ctf.rocks 2222</p>
 <p>Really bad they took down the website and services soon after the CTF, I coudn’t complete my write up. So as you read, don’t expect the flag, though the method remains the same.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nc crypto.sect.ctf.rocks 2222</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">nc crypto.sect.ctf.rocks 2222
+</code></pre>
 <p>As you are connected to the service, you are given three numbers: <code>p</code>, <code>g</code>, and <code>g^x</code>. They demand <code>x</code>.</p>
 <h3 id="Discrete-Logarithmic-Problem"><a href="#Discrete-Logarithmic-Problem" class="headerlink" title="Discrete Logarithmic Problem"></a>Discrete Logarithmic Problem</h3><p>A stright DLP challenge. Things to notice, <code>g</code>=2, and <code>p</code> is <em>factorizable</em>.  Tada!! it is Pohlig-Hellman. Use a sage script to solve the challenge.<br>Let y=g^x</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">R = IntegerModRing(p)</span><br><span class="line">x = discrete_log(R(y), R(g))</span><br><span class="line">print x</span><br></pre></td></tr></table></figure>
+<pre><code class="sage">R = IntegerModRing(p)
+x = discrete_log(R(y), R(g))
+print x
+</code></pre>
 <p>This will give the flag in less than two seconds. And that it.Submit x, to get the flag.</p>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p>**SECT{Ru$$ian_D0LLZ_h0lDs_TH3_S3cR3T}</p>
 <h3 id="Further-Reading"><a href="#Further-Reading" class="headerlink" title="Further Reading"></a>Further Reading</h3><p>Tum CTF 2016 <a href="http://mslc.ctf.su/wp/tum-ctf-2016-tacos-crypto-300/" target="_blank" rel="noopener">tacos</a></p>
@@ -693,7 +697,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -711,7 +715,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Article/">Article<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Entertainment/">Entertainment<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Writeups/">Writeups<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/Article/">Article<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Writeups/">Writeups<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -735,7 +739,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">9</span>
             </a>
         </li>
         
@@ -1042,7 +1046,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
                 </main>
             </div>
         <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1540734904114')
+  navigator.serviceWorker.register('/sw.js?t=1540914176873')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

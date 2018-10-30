@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="sayoojsamuel.github.io/2018/09/16/flatcrypto/" >
-    <title>Flatcrypto - OneDark</title>
+    <title>flatcrypto - OneDark</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     
-    <meta property="og:title" content="Flatcrypto">
+    <meta property="og:title" content="flatcrypto">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
+	
+		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
 	
 	<meta property="og:site_name" content="OneDark">
 	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="OneDark">
 	<meta name="twitter:url" content="sayoojsamuel.github.io/2018/09/16/flatcrypto/">
-	<meta name="twitter:title" content="Flatcrypto - OneDark">
+	<meta name="twitter:title" content="flatcrypto - OneDark">
 	
     
+    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
+	
 	
 	
     
@@ -42,7 +46,7 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "BlogPosting",
-			"headline": "Flatcrypto",
+			"headline": "flatcrypto",
 			
 			"mainEntityOfPage":{
 			    "@type":"WebPage",
@@ -50,6 +54,13 @@
 			},
 			"datePublished": "2018-09-16T18:04:34.000Z",
 			"dateModified": "2018-09-30T15:49:14.851Z",
+			
+			"image": {
+				"@type": "ImageObject",
+				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
+				"width" : "1024",
+				"height" : "800"
+			},
 			
 			"author": {
 			    "@type": "Person",
@@ -1793,11 +1804,19 @@ h6.categories {
 					<div class="entry-header">
 						
 						
+						
+			          	<div class="header-thumb flx">
+			          		<div class="thumbImg-w circle">
+			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
+			          			</amp-img>
+			          		</div>
+			          	</div>
+			            
 			            
 			            <div class="header-cap flx">
 							
 							  <h1 class="article-title entry-title" itemprop="name">
-							    <a href="sayoojsamuel.github.io/2018/09/16/flatcrypto/" target="_blank" itemprop="url">Flatcrypto</a>
+							    <a href="sayoojsamuel.github.io/2018/09/16/flatcrypto/" target="_blank" itemprop="url">flatcrypto</a>
 							  </h1>
 							
 						</div>
@@ -1825,13 +1844,63 @@ h6.categories {
                     
 			    	<!-- content -->
 			  		<p>Writeup from CSAW QUALS CTF&#x2019;18</p>
-<h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong><br></p><figure class="highlight stylus"><table><tbody><tr><td class="code"><pre><span class="line">no logos or branding <span class="keyword">for</span> this bug</span><br><span class="line"></span><br><span class="line">Take your pick nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8040</span> nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8041</span> nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8042</span> nc crypto<span class="selector-class">.chal</span><span class="selector-class">.csaw</span><span class="selector-class">.io</span> <span class="number">8043</span></span><br><span class="line"></span><br><span class="line">flag is not <span class="keyword">in</span> flag format. flag is PROBLEM_KEY</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>Attachments:</strong> serv-distribute.py<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.Util <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">ENCRYPT_KEY = bytes.fromhex(<span class="string">&apos;0000000000000000000000000000000000000000000000000000000000000000&apos;</span>)</span><br><span class="line"><span class="comment"># Determine this key.</span></span><br><span class="line"><span class="comment"># Character set: lowercase letters and underscore</span></span><br><span class="line">PROBLEM_KEY = <span class="string">&apos;not_the_flag&apos;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span><span class="params">(data, ctr)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        f = input(<span class="string">&quot;Encrypting service\n&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> len(f) &lt; <span class="number">20</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        enc = encrypt(bytes((PROBLEM_KEY + f).encode(<span class="string">&apos;utf-8&apos;</span>)), Counter.new(<span class="number">64</span>, prefix=os.urandom(<span class="number">8</span>)))</span><br><span class="line">        print(<span class="string">&quot;%s%s&quot;</span> %(enc, chr(len(enc))))</span><br></pre></td></tr></tbody></table></figure>
-<p>Again, it&#x2019;s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">enc = encrypt(bytes((PROBLEM_KEY + f).encode(<span class="string">&apos;utf-8&apos;</span>)),    |Counter.new(<span class="number">64</span>, prefix=os.urandom(<span class="number">8</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="CSAW-CTF-QUALS-2018-Flatcrypto"><a href="#CSAW-CTF-QUALS-2018-Flatcrypto" class="headerlink" title="CSAW CTF QUALS 2018: Flatcrypto"></a>CSAW CTF QUALS 2018: Flatcrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 184<br><strong>Description:</strong></p>
+<pre><code>no logos or branding for this bug
+
+Take your pick nc crypto.chal.csaw.io 8040 nc crypto.chal.csaw.io 8041 nc crypto.chal.csaw.io 8042 nc crypto.chal.csaw.io 8043
+
+flag is not in flag format. flag is PROBLEM_KEY
+</code></pre><p><strong>Attachments:</strong> serv-distribute.py</p>
+<pre><code class="python">import zlib
+import os
+
+from Crypto.Cipher import AES
+from Crypto.Util import Counter
+
+ENCRYPT_KEY = bytes.fromhex(&apos;0000000000000000000000000000000000000000000000000000000000000000&apos;)
+# Determine this key.
+# Character set: lowercase letters and underscore
+PROBLEM_KEY = &apos;not_the_flag&apos;
+
+def encrypt(data, ctr):
+    return AES.new(ENCRYPT_KEY, AES.MODE_CTR, counter=ctr).encrypt(zlib.compress(data))
+
+    while True:
+        f = input(&quot;Encrypting service\n&quot;)
+        if len(f) &lt; 20:
+            continue
+        enc = encrypt(bytes((PROBLEM_KEY + f).encode(&apos;utf-8&apos;)), Counter.new(64, prefix=os.urandom(8)))
+        print(&quot;%s%s&quot; %(enc, chr(len(enc))))
+</code></pre>
+<p>Again, it&#x2019;s another sipmple challenge based on AES_CTR.  For all those noobies, note that AES Counter mode does not have <strong><code>Padding</code></strong>.  And this challenge is specifically based on that. If we have a close look, it is the PROBLEM_KEY which we need to figure out. Now see that,</p>
+<pre><code class="python">enc = encrypt(bytes((PROBLEM_KEY + f).encode(&apos;utf-8&apos;)),    |Counter.new(64, prefix=os.urandom(8)))
+</code></pre>
 <p>is where we target out exploit.  Our input <code>f</code> is appended to the PROBLEM_KEY, compressed and then encrypted without padding.   This zlib compression is a huge vuln, and we forge a custom input such that the plaintext is compressed before encryption. Thus, it results in reduced length of the ciphertext.</p>
 <p>It is mentioned that the character set is lowercase ascii and underscore.<br>I have created a bruteforce script, in which, the brute starts with character &#x2018;a&#x2019; till &#x2018;z&#x2019; multiplied 20 times.<br>The length of the ciphertext decreases when the <strong>brute_char</strong> matches with the <strong>last byte</strong> of the PRODUCT_KEY. For the second last byte, we repeat the <strong>brute_char+lastbyte</strong> 20 times. Similarly the third last byte, which follows as<br><strong>brute_char+secondlast+lastbyte</strong> 20 times.</p>
 <p>This will eventually give us the flag, which is not in the flag format.</p>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.log_level=<span class="string">&quot;error&quot;</span></span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line">chars = string.ascii_lowercase + <span class="string">&quot;_&quot;</span></span><br><span class="line">flag = <span class="string">&quot;&quot;</span>    </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">30</span>):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">&quot;flag:&quot;</span>,flag</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> chars:</span><br><span class="line">        io = remote(<span class="string">&quot;crypto.chal.csaw.io&quot;</span>,<span class="number">8040</span>)</span><br><span class="line">        <span class="keyword">print</span> io.recv()</span><br><span class="line">        io.sendline((i+flag)*<span class="number">20</span>)</span><br><span class="line">        <span class="keyword">print</span> (i+flag)</span><br><span class="line">        out = io.recvline()</span><br><span class="line">        l = ord(out[<span class="number">-2</span>])</span><br><span class="line">        <span class="keyword">print</span> <span class="string">&quot;len=&quot;</span>,l, i</span><br><span class="line">        <span class="keyword">if</span> l&lt;<span class="number">35</span>:                  <span class="comment">#&lt;== You have to edit this manually</span></span><br><span class="line">            <span class="keyword">print</span> i</span><br><span class="line">            flag=i+flag</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        io.close()</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from pwn import *
+context.log_level=&quot;error&quot;
+import string
+chars = string.ascii_lowercase + &quot;_&quot;
+flag = &quot;&quot;    
+
+for j in range(30):
+    print &quot;flag:&quot;,flag
+    for i in chars:
+        io = remote(&quot;crypto.chal.csaw.io&quot;,8040)
+        print io.recv()
+        io.sendline((i+flag)*20)
+        print (i+flag)
+        out = io.recvline()
+        l = ord(out[-2])
+        print &quot;len=&quot;,l, i
+        if l&lt;35:                  #&lt;== You have to edit this manually
+            print i
+            flag=i+flag
+            break
+        io.close()
+
+</code></pre>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>crime_doesnt_have_a_logo</strong></p>
 <h3 id="Plaid-CTF-Compression"><a href="#Plaid-CTF-Compression" class="headerlink" title="Plaid CTF Compression"></a>Plaid CTF Compression</h3><p>A note to all the readers, that this challenge was the exact copy of the 2013 Plaid CTF challenge - Compression.  Dosen&#x2019;t know why they have to give the exact same question.  Follow the writeup for the challenge for detailed explanation.</p>
 

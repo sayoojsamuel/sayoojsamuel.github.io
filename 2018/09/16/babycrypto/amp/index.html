@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="sayoojsamuel.github.io/2018/09/16/babycrypto/" >
-    <title>Babycrypto - OneDark</title>
+    <title>babycrypto - OneDark</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     
-    <meta property="og:title" content="Babycrypto">
+    <meta property="og:title" content="babycrypto">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="sayoojsamuel.github.io/2018/09/16/babycrypto/">
+	
+		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
 	
 	<meta property="og:site_name" content="OneDark">
 	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="OneDark">
 	<meta name="twitter:url" content="sayoojsamuel.github.io/2018/09/16/babycrypto/">
-	<meta name="twitter:title" content="Babycrypto - OneDark">
+	<meta name="twitter:title" content="babycrypto - OneDark">
 	
     
+    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
+	
 	
 	
     
@@ -42,7 +46,7 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "BlogPosting",
-			"headline": "Babycrypto",
+			"headline": "babycrypto",
 			
 			"mainEntityOfPage":{
 			    "@type":"WebPage",
@@ -50,6 +54,13 @@
 			},
 			"datePublished": "2018-09-16T17:04:34.000Z",
 			"dateModified": "2018-10-27T14:43:29.272Z",
+			
+			"image": {
+				"@type": "ImageObject",
+				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
+				"width" : "1024",
+				"height" : "800"
+			},
 			
 			"author": {
 			    "@type": "Person",
@@ -1793,11 +1804,19 @@ h6.categories {
 					<div class="entry-header">
 						
 						
+						
+			          	<div class="header-thumb flx">
+			          		<div class="thumbImg-w circle">
+			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
+			          			</amp-img>
+			          		</div>
+			          	</div>
+			            
 			            
 			            <div class="header-cap flx">
 							
 							  <h1 class="article-title entry-title" itemprop="name">
-							    <a href="sayoojsamuel.github.io/2018/09/16/babycrypto/" target="_blank" itemprop="url">Babycrypto</a>
+							    <a href="sayoojsamuel.github.io/2018/09/16/babycrypto/" target="_blank" itemprop="url">babycrypto</a>
 							  </h1>
 							
 						</div>
@@ -1825,11 +1844,30 @@ h6.categories {
                     
 			    	<!-- content -->
 			  		<p>Writeup from CSAW QUALS CTF&#x2019;18</p>
-<h1 id="CSAW-CTF-QUALS-2018-Babycrypto"><a href="#CSAW-CTF-QUALS-2018-Babycrypto" class="headerlink" title="CSAW CTF QUALS 2018: Babycrypto"></a>CSAW CTF QUALS 2018: Babycrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 50<br><strong>Solves:</strong> 295<br><strong>Description:</strong><br></p><figure class="highlight vbnet"><table><tbody><tr><td class="code"><pre><span class="line">yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet</span><br><span class="line"></span><br><span class="line"><span class="built_in">single</span> yeet yeeted <span class="keyword">with</span> <span class="built_in">single</span> yeet == <span class="number">0</span></span><br><span class="line"></span><br><span class="line">yeeet</span><br><span class="line"></span><br><span class="line">what <span class="keyword">is</span> yeet?</span><br><span class="line"></span><br><span class="line">yeet <span class="keyword">is</span> yeet</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>Attachments:</strong> ciphertext.txt<br><code>PRO TIP</code>:Tell you what, the smallest crypto will always be XOR in CSAW!  And <code>a XOR a == 0</code> ==&gt;<br></p><figure class="highlight vbnet"><table><tbody><tr><td class="code"><pre><span class="line">|<span class="built_in">single</span> yeet yeeted <span class="keyword">with</span> <span class="built_in">single</span> yeet == <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
-<p>And that&#x2019;s the hint! to suggest it is a XOR challenge. So, we start with the attachment file, which includes a <code>base64</code> encoded ciphertext.<br>Perform a single byte xor, and you&#x2019;ll find the flag in character 255.</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Leon is a programmer who aspires to create programs that <span class="built_in">help</span> people <span class="keyword">do</span> less. He wants to put automation first, and scalability alongside. He dreams of a world <span class="built_in">where</span> the endless and the infinite become realities to mankind, and <span class="built_in">where</span> the <span class="literal">true</span> value of life is preserved.flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xor</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> chr(ord(i)^ord(j) <span class="keyword">for</span> i,j <span class="keyword">in</span> zip(a,b))</span><br><span class="line"></span><br><span class="line">ct = open(<span class="string">&apos;ciphertext.txt&apos;</span>,<span class="string">&apos;rb&apos;</span>).read().decode(<span class="string">&apos;base64&apos;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">    pt = xor(ct,chr(i)*len(ct))</span><br><span class="line">    <span class="keyword">if</span> all(c <span class="keyword">in</span> string.printable <span class="keyword">for</span> c <span class="keyword">in</span> pt): <span class="keyword">print</span> pt</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="CSAW-CTF-QUALS-2018-Babycrypto"><a href="#CSAW-CTF-QUALS-2018-Babycrypto" class="headerlink" title="CSAW CTF QUALS 2018: Babycrypto"></a>CSAW CTF QUALS 2018: Babycrypto</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 50<br><strong>Solves:</strong> 295<br><strong>Description:</strong></p>
+<pre><code>yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet
+
+single yeet yeeted with single yeet == 0
+
+yeeet
+
+what is yeet?
+
+yeet is yeet
+</code></pre><p><strong>Attachments:</strong> ciphertext.txt<br><code>PRO TIP</code>:Tell you what, the smallest crypto will always be XOR in CSAW!  And <code>a XOR a == 0</code> ==&gt;</p>
+<pre><code>|single yeet yeeted with single yeet == 0
+</code></pre><p>And that&#x2019;s the hint! to suggest it is a XOR challenge. So, we start with the attachment file, which includes a <code>base64</code> encoded ciphertext.<br>Perform a single byte xor, and you&#x2019;ll find the flag in character 255.</p>
+<pre><code class="bash">Leon is a programmer who aspires to create programs that help people do less. He wants to put automation first, and scalability alongside. He dreams of a world where the endless and the infinite become realities to mankind, and where the true value of life is preserved.flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}
+</code></pre>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">import string
+def xor(a,b):
+    return chr(ord(i)^ord(j) for i,j in zip(a,b))
+
+ct = open(&apos;ciphertext.txt&apos;,&apos;rb&apos;).read().decode(&apos;base64&apos;)
+for i in range(256):
+    pt = xor(ct,chr(i)*len(ct))
+    if all(c in string.printable for c in pt): print pt
+</code></pre>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{diffie-hellman-g0ph3rzraOY1Jal4cHaFY9SWRyAQ6aH}</strong></p>
 
 			  		

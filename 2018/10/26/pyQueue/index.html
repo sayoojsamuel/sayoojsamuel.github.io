@@ -525,28 +525,121 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Writeup from Bsides CTF’18</p>
-<h1 id="Bsides-CTF-2018-pyQueue"><a href="#Bsides-CTF-2018-pyQueue" class="headerlink" title="Bsides CTF 2018: pyQueue"></a>Bsides CTF 2018: pyQueue</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 150<br><strong>Solves:</strong> 43<br><strong>Description:</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Easy Right?</span><br></pre></td></tr></table></figure></p>
+<h1 id="Bsides-CTF-2018-pyQueue"><a href="#Bsides-CTF-2018-pyQueue" class="headerlink" title="Bsides CTF 2018: pyQueue"></a>Bsides CTF 2018: pyQueue</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 150<br><strong>Solves:</strong> 43<br><strong>Description:</strong></p>
+<pre><code class="bash">Easy Right?
+</code></pre>
 <p><strong>Attachments:</strong> pyQueue.tar.xz</p>
 <p>The attachment contains two files</p>
 <ol>
 <li>encrypt.py</li>
 <li>ci.pher.text</li>
 </ol>
-<p>Let’s analyse the <code>encrypt.py</code><br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">key = AES_Key()</span><br><span class="line">ct=<span class="string">""</span></span><br><span class="line">MAC = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> List <span class="keyword">in</span> slice(FLAG):</span><br><span class="line">    <span class="keyword">for</span> block <span class="keyword">in</span> List:</span><br><span class="line">        cipher = AES.new(key.shuffle(), AES.MODE_ECB)</span><br><span class="line">        ct+= cipher.encrypt(block)</span><br><span class="line">        MAC ^= int(ct[<span class="number">-16</span>:].encode(<span class="string">'hex'</span>),<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">MAC ^= int(key.shuffle().encode(<span class="string">'hex'</span>),<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">open(<span class="string">"ci.pher.text"</span>,<span class="string">'wb'</span>).write(str(MAC) +<span class="string">":"</span>+ ct.encode(<span class="string">'hex'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>Let’s analyse the <code>encrypt.py</code></p>
+<pre><code class="python">
+key = AES_Key()
+ct=&quot;&quot;
+MAC = 0
+for List in slice(FLAG):
+    for block in List:
+        cipher = AES.new(key.shuffle(), AES.MODE_ECB)
+        ct+= cipher.encrypt(block)
+        MAC ^= int(ct[-16:].encode(&#39;hex&#39;),16)
+
+MAC ^= int(key.shuffle().encode(&#39;hex&#39;),16)
+
+open(&quot;ci.pher.text&quot;,&#39;wb&#39;).write(str(MAC) +&quot;:&quot;+ ct.encode(&#39;hex&#39;))
+
+</code></pre>
 <p>Well, it’s an AES challenge on first sight. Three points to note, </p>
 <ol>
 <li>Each time an AES instance is created, a new <strong>key</strong> is being used as a resultant of <code>key.shuffle()</code></li>
-<li><p><strong>MAC</strong> is generated as the <code>XOR</code> of all the <code>ct</code> blocks. At the end, <strong>MAC</strong> is xored with <strong>key</strong> after being shuffled for one last time.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MAC ^= int(key.shuffle().encode(<span class="string">'hex'</span>),<span class="number">16</span>)</span><br></pre></td></tr></table></figure>
+<li><strong>MAC</strong> is generated as the <code>XOR</code> of all the <code>ct</code> blocks. At the end, <strong>MAC</strong> is xored with <strong>key</strong> after being shuffled for one last time.<pre><code class="python">MAC ^= int(key.shuffle().encode(&#39;hex&#39;),16)
+</code></pre>
 </li>
-<li><p><strong>ci.pher.text</strong> is of the format <em>MAC:CipherText</em> </p>
-</li>
+<li><strong>ci.pher.text</strong> is of the format <em>MAC:CipherText</em> </li>
 </ol>
-<p>A peek into the Key generation,<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AES_Key</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.key=list(os.urandom(<span class="number">16</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.key+=get_random_bytes(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.key=self.key[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.key)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shuffle</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.dequeue()</span><br><span class="line">        self.enqueue()</span><br><span class="line">        <span class="keyword">assert</span> self.size()==AES.block_size</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(self.key)</span><br></pre></td></tr></table></figure></p>
+<p>A peek into the Key generation, </p>
+<pre><code class="python">class AES_Key:
+    def __init__(self):
+        self.key=list(os.urandom(16))
+
+    def enqueue(self):
+        self.key+=get_random_bytes(1)
+
+    def dequeue(self):
+        self.key=self.key[1:]
+
+    def size(self):
+        return len(self.key)
+
+    def shuffle(self):
+        self.dequeue()
+        self.enqueue()
+        assert self.size()==AES.block_size
+        return &quot;&quot;.join(self.key)
+
+</code></pre>
 <p>This reveals that <code>shuffle()</code> method just removes the first byte of the 16 byte <strong>key</strong> and appends a random byte at the end. The complete setup was implemented as a Queue :P. This makes it a whole lot easier to bruteforce!</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h4 id="Key-Recovery"><a href="#Key-Recovery" class="headerlink" title="Key Recovery"></a>Key Recovery</h4><p>Now, to recover the <strong>key</strong>, we just have to <code>XOR</code> the <strong>MAC</strong> with all the <code>ct</code> blocks. The resultant is the key.shuffled() value.<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Calculate key</span></span><br><span class="line">last_key = int(MAC)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ct:</span><br><span class="line">    last_key ^= int(i.encode(<span class="string">'hex'</span>), <span class="number">16</span>)</span><br><span class="line">last_key = long_to_bytes(last_key)</span><br></pre></td></tr></table></figure></p>
-<h4 id="BruteForce"><a href="#BruteForce" class="headerlink" title="BruteForce"></a>BruteForce</h4><p>All you need to do now is to bruteforce over 256 possible character. That is, remove the last byte of <code>assumed key</code> and add the bruteforce character at the beginning. The <strong>key</strong> pair for the <code>plaintext</code> where most of the starting characters are printable is what we are looking for.<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">brute</span><span class="params">()</span>:</span></span><br><span class="line">    key = last_key</span><br><span class="line">    pt = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">        key = key[:<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">            cipher = AES.new(chr(ch)+key,AES.MODE_ECB)</span><br><span class="line">            recover = cipher.decrypt(ct[i])</span><br><span class="line">            <span class="keyword">if</span>(all(c <span class="keyword">in</span> printable <span class="keyword">for</span> c <span class="keyword">in</span> recover[:<span class="number">10</span>])):</span><br><span class="line">                pt = recover + pt</span><br><span class="line">                key = chr(ch)+key</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> pt</span><br></pre></td></tr></table></figure></p>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> printable</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_by</span><span class="params">(msg,step)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [msg[i:i+step] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(msg),<span class="number">16</span>)]</span><br><span class="line"></span><br><span class="line">data = open(<span class="string">"ci.pher.text"</span>,<span class="string">'rb'</span>).read()</span><br><span class="line">MAC,ct = data.split(<span class="string">":"</span>)</span><br><span class="line"></span><br><span class="line">ct = split_by(ct.decode(<span class="string">'hex'</span>),<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Calculate key</span></span><br><span class="line">last_key = int(MAC)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ct:</span><br><span class="line">    last_key ^= int(i.encode(<span class="string">'hex'</span>), <span class="number">16</span>)</span><br><span class="line">last_key = long_to_bytes(last_key)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Brute Joy!!!</span></span><br><span class="line">key = last_key</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">brute</span><span class="params">()</span>:</span></span><br><span class="line">    key = last_key</span><br><span class="line">    pt = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">        key = key[:<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">            cipher = AES.new(chr(ch)+key,AES.MODE_ECB)</span><br><span class="line">            recover = cipher.decrypt(ct[i])</span><br><span class="line">            <span class="keyword">if</span>(all(c <span class="keyword">in</span> printable <span class="keyword">for</span> c <span class="keyword">in</span> recover[:<span class="number">10</span>])):</span><br><span class="line">                pt = recover + pt</span><br><span class="line">                key = chr(ch)+key</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> pt</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> brute()</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h4 id="Key-Recovery"><a href="#Key-Recovery" class="headerlink" title="Key Recovery"></a>Key Recovery</h4><p>Now, to recover the <strong>key</strong>, we just have to <code>XOR</code> the <strong>MAC</strong> with all the <code>ct</code> blocks. The resultant is the key.shuffled() value.</p>
+<pre><code class="python"># Calculate key
+last_key = int(MAC)
+for i in ct:
+    last_key ^= int(i.encode(&#39;hex&#39;), 16)
+last_key = long_to_bytes(last_key)
+</code></pre>
+<h4 id="BruteForce"><a href="#BruteForce" class="headerlink" title="BruteForce"></a>BruteForce</h4><p>All you need to do now is to bruteforce over 256 possible character. That is, remove the last byte of <code>assumed key</code> and add the bruteforce character at the beginning. The <strong>key</strong> pair for the <code>plaintext</code> where most of the starting characters are printable is what we are looking for.</p>
+<pre><code class="python">def brute():
+    key = last_key
+    pt = &quot;&quot;
+    for i in range(2,-1,-1):
+        key = key[:-1]
+        for ch in range(256):
+            cipher = AES.new(chr(ch)+key,AES.MODE_ECB)
+            recover = cipher.decrypt(ct[i])
+            if(all(c in printable for c in recover[:10])):
+                pt = recover + pt
+                key = chr(ch)+key
+                break
+    return pt
+</code></pre>
+<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from Crypto.Cipher import AES
+from Crypto.Util.number import *
+from string import printable
+
+def split_by(msg,step):
+    return [msg[i:i+step] for i in range(0,len(msg),16)]
+
+data = open(&quot;ci.pher.text&quot;,&#39;rb&#39;).read()
+MAC,ct = data.split(&quot;:&quot;)
+
+ct = split_by(ct.decode(&#39;hex&#39;),16)
+
+# Calculate key
+last_key = int(MAC)
+for i in ct:
+    last_key ^= int(i.encode(&#39;hex&#39;), 16)
+last_key = long_to_bytes(last_key)
+
+# Brute Joy!!!
+key = last_key
+
+def brute():
+    key = last_key
+    pt = &quot;&quot;
+    for i in range(2,-1,-1):
+        key = key[:-1]
+        for ch in range(256):
+            cipher = AES.new(chr(ch)+key,AES.MODE_ECB)
+            recover = cipher.decrypt(ct[i])
+            if(all(c in printable for c in recover[:10])):
+                pt = recover + pt
+                key = chr(ch)+key
+                break
+    return pt
+
+print brute()
+
+</code></pre>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{H4il_bUggi3s!_qu3u3_k3y_2_h0t_4_w4rmUp}</strong></p>
 <h3 id="Author’s-Note"><a href="#Author’s-Note" class="headerlink" title="Author’s Note"></a>Author’s Note</h3><p>I authored this challenge for Bsides CTF’18. I know that these kinda bruteforce challenges makes it hard for pro’s to play with, but will be pretty interesting for the beginners. I’m just saying :p<br>Also, check out the writeup of <a href="https://sayoojsamuel.github.io/2018/10/26/tile-mate/">Tile-Mate</a> (Crypto 100) challenge here.</p>
 
@@ -615,7 +708,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/30/bigboss/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/16/flatcrypto/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -707,7 +800,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -725,7 +818,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Article/">Article<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Entertainment/">Entertainment<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Writeups/">Writeups<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/Article/">Article<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Writeups/">Writeups<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -749,7 +842,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">9</span>
             </a>
         </li>
         
@@ -1056,7 +1149,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
                 </main>
             </div>
         <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1540734904114')
+  navigator.serviceWorker.register('/sw.js?t=1540914176873')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
