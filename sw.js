@@ -24,15 +24,15 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/2018/11/01/Web/php/php-from-home/');
+
   precacheUrls.push('/2018/10/28/Site-Updated/');
 
-  precacheUrls.push('/2018/10/26/tile-mate/');
+  precacheUrls.push('/2018/10/26/Writeups/tile-mate/');
 
-  precacheUrls.push('/2018/10/26/pyQueue/');
+  precacheUrls.push('/2018/10/26/Writeups/pyQueue/');
 
-  precacheUrls.push('/2018/09/16/flatcrypto/');
-
-  precacheUrls.push('/2018/09/16/babycrypto/');
+  precacheUrls.push('/2018/09/16/Writeups/flatcrypto/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
