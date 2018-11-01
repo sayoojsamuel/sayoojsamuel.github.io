@@ -24,7 +24,7 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/2018/11/01/Web/php/php-from-home/');
+  precacheUrls.push('/2018/11/01/Web/php/How to access PHP from Home/');
 
   precacheUrls.push('/2018/10/28/Site-Updated/');
 

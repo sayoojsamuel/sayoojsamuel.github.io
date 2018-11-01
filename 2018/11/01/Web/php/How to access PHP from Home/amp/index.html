@@ -2,22 +2,26 @@
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="sayoojsamuel.github.io/2018/10/26/Writeups/tile-mate/" >
-    <title>tile-mate - OneDark</title>
+    <link rel="canonical" href="sayoojsamuel.github.io/2018/11/01/Web/php/How to access PHP from Home/" >
+    <title>php_from_home - OneDark</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     
-    <meta property="og:title" content="tile-mate">
+    <meta property="og:title" content="php_from_home">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="sayoojsamuel.github.io/2018/10/26/Writeups/tile-mate/">
+	<meta property="og:url" content="sayoojsamuel.github.io/2018/11/01/Web/php/How to access PHP from Home/">
 	
 		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
 	
 	<meta property="og:site_name" content="OneDark">
 	
+		<meta property="og:description" content="&lt;p&gt;This is a documentation to enable apache2 in home directory. Feel free to try out this hack, if you are too tired of copying files to &lt;code&gt;/var/www/html/&lt;/code&gt; folder.&lt;br&gt;">
+	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="OneDark">
-	<meta name="twitter:url" content="sayoojsamuel.github.io/2018/10/26/Writeups/tile-mate/">
-	<meta name="twitter:title" content="tile-mate - OneDark">
+	<meta name="twitter:url" content="sayoojsamuel.github.io/2018/11/01/Web/php/How to access PHP from Home/">
+	<meta name="twitter:title" content="php_from_home - OneDark">
+	
+		<meta name="twitter:description" content="&lt;p&gt;This is a documentation to enable apache2 in home directory. Feel free to try out this hack, if you are too tired of copying files to &lt;code&gt;/var/www/html/&lt;/code&gt; folder.&lt;br&gt;">
 	
     
     	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
@@ -46,14 +50,16 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "BlogPosting",
-			"headline": "tile-mate",
+			"headline": "php_from_home",
+			
+			"description": "&lt;p&gt;This is a documentation to enable apache2 in home directory. Feel free to try out this hack, if you are too tired of copying files to &lt;code&gt;/var/www/html/&lt;/code&gt; folder.&lt;br&gt;",
 			
 			"mainEntityOfPage":{
 			    "@type":"WebPage",
-			    "@id":"sayoojsamuel.github.io/2018/10/26/Writeups/tile-mate/"
+			    "@id":"sayoojsamuel.github.io/2018/11/01/Web/php/How to access PHP from Home/"
 			},
-			"datePublished": "2018-10-26T14:49:34.000Z",
-			"dateModified": "2018-11-01T17:13:02.396Z",
+			"datePublished": "2018-11-01T16:39:34.000Z",
+			"dateModified": "2018-11-01T17:15:36.948Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1765,7 +1771,7 @@ h6.categories {
   	<!-- container -->
   	<div id="container">
 	  	<div id="main">
-		    <article id="post-Writeups/tile-mate" class="post">
+		    <article id="post-Web/php/How to access PHP from Home" class="post">
 		    
 		   		<!-- categories and bread crumb -->
 		    	
@@ -1784,11 +1790,11 @@ h6.categories {
 								
 						    		<li itemprop="itemListElement" itemscope
 									      itemtype="http://schema.org/ListItem">
-									    <a itemprop="item" href="/categories/Writeups/">
+									    <a itemprop="item" href="/categories/Web/">
 									      
 									      	<span class="sns-icon folder-icon"></span>
 									      
-									      <span itemprop="name">Writeups</span>
+									      <span itemprop="name">Web</span>
 									    </a>
 									    <meta itemprop="position" content="2" />
 									</li>
@@ -1816,7 +1822,7 @@ h6.categories {
 			            <div class="header-cap flx">
 							
 							  <h1 class="article-title entry-title" itemprop="name">
-							    <a href="sayoojsamuel.github.io/2018/10/26/Writeups/tile-mate/" target="_blank" itemprop="url">tile-mate</a>
+							    <a href="sayoojsamuel.github.io/2018/11/01/Web/php/How to access PHP from Home/" target="_blank" itemprop="url">php_from_home</a>
 							  </h1>
 							
 						</div>
@@ -1826,7 +1832,7 @@ h6.categories {
 					<div class="entry-meta-header">
 						<span class="meta-elements date">
 							<span class="fa fa-fw fa-clock-o"></span>
-							<time datetime="2018-10-26" itemprop="datePublished">2018.10.26</time>
+							<time datetime="2018-11-01" itemprop="datePublished">2018.11.01</time>
 						</span>
 					</div>
 				</div>
@@ -1843,78 +1849,36 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>Writeup from Bsides CTF&#x2019;18</p>
-<h1 id="Bsides-CTF-2018-Tile-Mate"><a href="#Bsides-CTF-2018-Tile-Mate" class="headerlink" title="Bsides CTF 2018: Tile Mate"></a>Bsides CTF 2018: Tile Mate</h1><p><strong>Category:</strong> Crypto<br><strong>Challenge Points:</strong> 100<br><strong>Solves:</strong> 35<br><strong>Description:</strong></p>
-<pre><code class="bash">David and Toni rides scooter. Everyone knows except them!
-</code></pre>
-<p><strong>Attachments:</strong> tile_mate.tar.xz</p>
-<p>This is an easy <code>XOR</code> challenge, with a custom plaintext substitution before the actual <code>XOR</code> process.<br>Again, the attachment contains two files</p>
-<ol>
-<li>encrypt.py</li>
-<li>ci.pher.text</li>
-</ol>
-<pre><code class="python">from itertools import cycle as scooter
-from secret import FLAG, KEY
-from hashlib import sha384
+			  		<p>This is a documentation to enable apache2 in home directory. Feel free to try out this hack, if you are too tired of copying files to <code>/var/www/html/</code> folder.<br><a id="more"></a></p>
+<h1 id="Apach2-at-Home-Directory"><a href="#Apach2-at-Home-Directory" class="headerlink" title="Apach2 at Home Directory"></a>Apach2 at Home Directory</h1><h2 id="Enable-userdir-module"><a href="#Enable-userdir-module" class="headerlink" title="Enable userdir module"></a>Enable userdir module</h2><pre><code>sudo a2enmod userdir
+</code></pre><p>This module allows user-specific directories to be accessed using the <a href="http://example.com/~user/" target="_blank" rel="noopener">http://example.com/~user/</a> syntax. </p>
+<h2 id="Allow-PHP-to-be-executed-in-user-directory"><a href="#Allow-PHP-to-be-executed-in-user-directory" class="headerlink" title="Allow PHP to be executed in user directory"></a>Allow PHP to be executed in user directory</h2><h4 id="Commenting-php-mods-config"><a href="#Commenting-php-mods-config" class="headerlink" title="Commenting php-mods config"></a>Commenting php-mods config</h4><p>You we have to configure php-mods config file.  The config file varies based on your PHP version.<br>Execute the following command (for php5)</p>
+<pre><code>sudo vim /etc/apache2/mods-available/php5.conf
+</code></pre><p>Or this if you use php7.0</p>
+<pre><code>sudo vim /etc/apache2/mods-available/php7.0.conf
+</code></pre><p>You can even use <code>gedit</code> or any text editor of your choice if you are not familiar with vim commands.<br>Next Comment the following part in the file.</p>
+<pre><code>#&lt;IfModule mod_userdir.c&gt;
+#    &lt;Directory /home/*/public_html&gt;
+#        php_admin_flag engine Off
+#    &lt;/Directory&gt;
+#&lt;/IfModule&gt;
 
-assert FLAG.islower()
-assert len(KEY) == 10
-
-def drive(Helmet, Petrol):
-    return &apos;&apos;.join(chr(ord(David)^ord(Toni)) for David,Toni in zip(Helmet,scooter(Petrol)))
-f = lambda x: sha384(x).digest()[(ord(x)+7)%48]
-encrypted = drive(map(f,FLAG),KEY.decode(&apos;hex&apos;)).encode(&apos;hex&apos;)
-open(&apos;ci.pher.text&apos;,&apos;wb&apos;).write(encrypted)
-</code></pre>
-<p>Hmm, it is pretty obvious <code>drive()</code> is the <strong>Repeated Key <code>XOR</code></strong> function, although the function looks cool! (Atleast the &#x2018;Helmet,scooter(Petrol)&#x2019; part :p)..<br><code>f</code> being another function which returns the <code>x+7</code>th index character from the sha384 hash of <code>x</code>.<br>The ciphertext is simply the XOR(f(pt),key).</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="python">assert FLAG.islower()
-assert len(KEY) == 10
-</code></pre>
-<p>This suggests that the <strong>flag</strong> is composed of lowercase characters (digits and punctuation included) and the <strong>key</strong> length is 5 bytes (hex 10). </p>
-<h4 id="Key-Recovery"><a href="#Key-Recovery" class="headerlink" title="Key Recovery"></a>Key Recovery</h4><p>Since the flag format is <code>flag{</code>, we can recover the <strong>key</strong> by XORing f(&#x201C;<code>flag{</code>&#x201C;) with <code>ciphertext</code>.</p>
-<pre><code class="python">hashed_flag = &apos;&apos;.join(map(f,&quot;flag{&quot;))
-key = xor(hashed_flag,ct)
-hashed_pt = xor(ct,key)
-</code></pre>
-<p>Now this <code>hashed_pt</code> is nothing but the hash of the <code>flag</code>.</p>
-<h4 id="Getting-to-the-Flag"><a href="#Getting-to-the-Flag" class="headerlink" title="Getting to the Flag"></a>Getting to the Flag</h4><pre><code>f = lambda x: sha384(x).digest()[(ord(x)+7)%48]
-</code></pre><p>This custom hash is not reversible, but we can still create a map with all possible characters, cause that&#x2019;s just 90 possibilities ( Remember the lowercase?)</p>
-<pre><code class="python">chars = string.ascii_lowercase+string.digits+string.punctuation
-table = dict(zip(map(f,chars),chars))
-
-flag=&quot;&quot;
-for i in hashed_pt: flag+=table[i]
-print flag
-</code></pre>
-<p>The <code>table</code> contains the dict of hash, and character as key, value pair.<br>For characters in <code>hashed_pt</code>, we find the preimage of the hash from the table. And you hold the flag for the challenge, TADA!!!</p>
-<h2 id="Complete-Script"><a href="#Complete-Script" class="headerlink" title="Complete Script"></a>Complete Script</h2><pre><code class="python">from hashlib import sha384
-from itertools import cycle
-import string
-
-def xor(msg,key):
-    return &apos;&apos;.join(chr(ord(i)^ord(j)) for i,j in zip(msg,cycle(key)))
-
-f = lambda x: sha384(x).digest()[(ord(x)+7)%48]
-ct = open(&apos;ci.pher.text&apos;,&apos;rb&apos;).read().decode(&apos;hex&apos;)
-hashed_flag = &apos;&apos;.join(map(f,&quot;flag{&quot;))
-key = xor(hashed_flag,ct)
-hashed_pt = xor(ct,key)
-
-chars = string.ascii_lowercase+string.digits+string.punctuation
-table = dict(zip(map(f,chars),chars))
-
-flag=&quot;&quot;
-for i in hashed_pt: flag+=table[i]
-print flag
-</code></pre>
-<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><p><strong>flag{cr1b_dr4g_w1th_u1tr4_c00l_sc00ter!}</strong></p>
-<h3 id="Author&#x2019;s-Note"><a href="#Author&#x2019;s-Note" class="headerlink" title="Author&#x2019;s Note"></a>Author&#x2019;s Note</h3><p>Okay, this is the second challenge I authored for BSides CTF&#x2019;18 being organised at Delhi, the first one being <a href="https://sayoojsamuel.github.io/2018/10/26/pyQueue/">pyQueue</a>.</p>
-<h2 id="4-Line-exploit"><a href="#4-Line-exploit" class="headerlink" title="4 Line exploit"></a>4 Line exploit</h2><p>Just a show-off, </p>
-<pre><code class="python">from hashlib import sha384;from itertools import cycle;import string
-xor,f,ct,chars=lambda (msg,key): &apos;&apos;.join(chr(ord(i)^ord(j)) for i,j in zip(msg,cycle(key))),lambda x: sha384(x).digest()[(ord(x)+7)%48],open(&apos;ci.pher.text&apos;,&apos;rb&apos;).read().decode(&apos;hex&apos;),string.ascii_lowercase+string.digits+string.punctuation
-hashed_pt,flag,table=xor((ct,xor((&apos;&apos;.join(map(f,&quot;flag{&quot;)),ct)))),&quot;&quot;,dict(zip(map(f,chars),chars))
-for i in hashed_pt: flag+=table[i];print flag
-</code></pre>
+</code></pre><h4 id="Enabling-Directory-Listing"><a href="#Enabling-Directory-Listing" class="headerlink" title="Enabling Directory Listing"></a>Enabling Directory Listing</h4><p>To enable Directory Listing for apache server, add the following command to apache2.config file </p>
+<blockquote>
+<p>sudo vim /etc/apache2/apache2.conf</p>
+</blockquote>
+<p>At the very bottom of the file, add this command</p>
+<pre><code>&lt;Directory /home/*/public_html/&gt;
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+&lt;/Directory&gt;
+</code></pre><h2 id="Restart-Apache"><a href="#Restart-Apache" class="headerlink" title="Restart Apache"></a>Restart Apache</h2><p>Restart the apache to apply the new configurations.</p>
+<blockquote>
+<p>sudo service apache2 restart</p>
+</blockquote>
+<h2 id="Enjoy"><a href="#Enjoy" class="headerlink" title="Enjoy!!"></a>Enjoy!!</h2><p>Thats the end! Now you can enjoy Apache server your home directory. To start with, copy the php files to <strong>/home/<username>/public_html</username></strong> and then visit<br><code>https://localhost/~username</code><br>from the web browser.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://askubuntu.com/a/518188" target="_blank" rel="noopener">askubuntu</a></p>
 
 			  		
 			  		<!-- google Adsense -->
@@ -1942,8 +1906,8 @@ for i in hashed_pt: flag+=table[i];print flag
 						<ul class="article-tag-list">
 							
 					    		<li class="article-tag-list-item">
-					    			<a class="article-tag-list-link" href="/tags/XOR-Python-Custom-Hash-Delhi-Bsides-CTF/">
-					    				XOR, Python, Custom, Hash, Delhi, , Bsides, CTF
+					    			<a class="article-tag-list-link" href="/tags/Website-Host-localhost-home-apache-php-host-directory/">
+					    				Website, Host, localhost, home, apache, php, host, directory,
 					    			</a>
 					    		</li>
 							
