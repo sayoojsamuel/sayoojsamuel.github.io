@@ -24,11 +24,11 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/2018/09/16/Writeups/babycrypto/');
+  precacheUrls.push('/2018/09/16/Writeups/flatcrypto/');
 
   precacheUrls.push('/2018/11/02/CSS-Test/');
 
-  precacheUrls.push('/2018/11/13/Soul-Keybase/Soul-Keybase/');
+  precacheUrls.push('/2018/11/13/Tools/Soul-Keybase/Soul-Keybase/');
 
   precacheUrls.push('/2018/11/01/Web/php/How to access PHP from Home/');
 
