@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>cat flag</title>
+      <link href="/2018/12/08/Writeups/cat-flag/"/>
+      <url>/2018/12/08/Writeups/cat-flag/</url>
+      <content type="html"><![CDATA[<p>Writeup from hxp CTF’18</p><h1 id="hxp-CTF-2018-cat-flag"><a href="#hxp-CTF-2018-cat-flag" class="headerlink" title="hxp CTF 2018: cat flag"></a>hxp CTF 2018: cat flag</h1><p><strong>Category:</strong> Tro<br><strong>Challenge Points:</strong> 25<br><strong>Solves:</strong> 230+</p><p><strong>Service:</strong> nc 116.203.19.157 13370</p><p><strong>Description:</strong></p><pre><code>Welcome to the hxp CTF 2018!hxp would like to to reward loyal customers with a special offer. *FREE SHELLS!!!PS: Just cat flag and no hacks please :/* Only while supplies last, limited to one per household</code></pre><p>Oh, and a nice welcome message as soon as we connect! </p><img src="/2018/12/08/Writeups/cat-flag/shell.png" title="Welcomeshell % ### The challenge The objective was crystal clear. `cat flag`. The first thing I did was `ls -l` and got flag file with `222` permission. {% asset_img ls.png ls"><p>Seemed pretty easy first, but the command were heavily limitted to </p><blockquote><p>cat<br>ls<br>sh<br>Although basic <code>echo</code> and <code>cd</code> was working pretty well. </p></blockquote><h3 id="After-hours"><a href="#After-hours" class="headerlink" title="After hours"></a>After hours</h3><p>To my luck, <code>read</code> was the clandestine command I was looking for.</p><pre><code class="bash">read -r f &lt; flagcat $f</code></pre><img src="/2018/12/08/Writeups/cat-flag/flag.png" title="Flag"><h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><blockquote><p>hxp{You_escaped_from_ANSI}</p></blockquote><p>I still don’t know why I spent hours going through the /tmp and /usr files. </p>]]></content>
+      
+      <categories>
+          
+          <category> Writeups </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Troll, bash, cat flag, permissions </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Soul Keybase</title>
       <link href="/2018/11/13/Tools/Soul-Keybase/"/>
       <url>/2018/11/13/Tools/Soul-Keybase/</url>
