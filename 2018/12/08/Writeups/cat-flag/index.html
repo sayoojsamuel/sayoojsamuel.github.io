@@ -253,7 +253,7 @@
 
     
         <meta property="article:published_time" content="Sat Dec 08 2018 20:34:34 GMT+0530">
-        <meta property="article:modified_time" content="Sun Dec 09 2018 17:51:16 GMT+0530">
+        <meta property="article:modified_time" content="Sun Dec 09 2018 17:57:40 GMT+0530">
     
 
     <!-- The Twitter Card protocol -->
@@ -276,7 +276,7 @@
     "mainEntityOfPage": "sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/index.html",
     "headline": "cat flag",
     "datePublished": "Sat Dec 08 2018 20:34:34 GMT+0530",
-    "dateModified": "Sun Dec 09 2018 17:51:16 GMT+0530",
+    "dateModified": "Sun Dec 09 2018 17:57:40 GMT+0530",
     "author": {
         "@type": "Person",
         "name": "Sayooj Samuel",
@@ -541,13 +541,14 @@ PS: Just cat flag and no hacks please :/
 <img src="/2018/12/08/Writeups/cat-flag/shell.png" title="Welcomeshell % ### The challenge The objective was crystal clear. `cat flag`. The first thing I did was `ls -l` and got flag file with `222` permission. {% asset_img ls.png ls">
 <p>Seemed pretty easy first, but the command were heavily limitted to </p>
 <blockquote>
-<p>cat<br>ls<br>sh<br>Although basic <code>echo</code> and <code>cd</code> was working pretty well. </p>
+<p>cat<br>ls<br>sh</p>
 </blockquote>
+<p>Although basic <code>echo</code> and <code>cd</code> was working pretty well. </p>
 <h3 id="After-hours"><a href="#After-hours" class="headerlink" title="After hours"></a>After hours</h3><p>To my luck, <code>read</code> was the clandestine command I was looking for.</p>
 <pre><code class="bash">read -r f &lt; flag
 cat $f
 </code></pre>
-<img src="/2018/12/08/Writeups/cat-flag/flag.png" title="Flag">
+<p>Put that right into the shell and grab the flag. Simple :)<br><img src="/2018/12/08/Writeups/cat-flag/flag.png" title="Flag"></p>
 <h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><blockquote>
 <p>hxp{You_escaped_from_ANSI}</p>
 </blockquote>
@@ -1052,7 +1053,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
                 </main>
             </div>
         <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1544358082623')
+  navigator.serviceWorker.register('/sw.js?t=1544358467235')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
