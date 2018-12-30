@@ -2,13 +2,13 @@
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/" >
-    <title>Cool New Hexo - OneDark</title>
+    <link rel="canonical" href="sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/" >
+    <title>cat flag - OneDark</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     
-    <meta property="og:title" content="Cool New Hexo">
+    <meta property="og:title" content="cat flag">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/">
+	<meta property="og:url" content="sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/">
 	
 		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
 	
@@ -16,8 +16,8 @@
 	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="OneDark">
-	<meta name="twitter:url" content="sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/">
-	<meta name="twitter:title" content="Cool New Hexo - OneDark">
+	<meta name="twitter:url" content="sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/">
+	<meta name="twitter:title" content="cat flag - OneDark">
 	
     
     	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
@@ -46,14 +46,14 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "BlogPosting",
-			"headline": "Cool New Hexo",
+			"headline": "cat flag",
 			
 			"mainEntityOfPage":{
 			    "@type":"WebPage",
-			    "@id":"sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/"
+			    "@id":"sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/"
 			},
-			"datePublished": "2018-10-28T10:18:00.000Z",
-			"dateModified": "2018-12-30T12:52:32.665Z",
+			"datePublished": "2018-12-08T15:04:34.000Z",
+			"dateModified": "2018-12-30T12:52:32.669Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1765,7 +1765,7 @@ h6.categories {
   	<!-- container -->
   	<div id="container">
 	  	<div id="main">
-		    <article id="post-Hexo/Site-Updated" class="post">
+		    <article id="post-Writeups/cat-flag" class="post">
 		    
 		   		<!-- categories and bread crumb -->
 		    	
@@ -1784,11 +1784,11 @@ h6.categories {
 								
 						    		<li itemprop="itemListElement" itemscope
 									      itemtype="http://schema.org/ListItem">
-									    <a itemprop="item" href="/categories/Hexo/">
+									    <a itemprop="item" href="/categories/Writeups/">
 									      
 									      	<span class="sns-icon folder-icon"></span>
 									      
-									      <span itemprop="name">Hexo</span>
+									      <span itemprop="name">Writeups</span>
 									    </a>
 									    <meta itemprop="position" content="2" />
 									</li>
@@ -1816,7 +1816,7 @@ h6.categories {
 			            <div class="header-cap flx">
 							
 							  <h1 class="article-title entry-title" itemprop="name">
-							    <a href="sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/" target="_blank" itemprop="url">Cool New Hexo</a>
+							    <a href="sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/" target="_blank" itemprop="url">cat flag</a>
 							  </h1>
 							
 						</div>
@@ -1826,7 +1826,7 @@ h6.categories {
 					<div class="entry-meta-header">
 						<span class="meta-elements date">
 							<span class="fa fa-fw fa-clock-o"></span>
-							<time datetime="2018-10-28" itemprop="datePublished">2018.10.28</time>
+							<time datetime="2018-12-08" itemprop="datePublished">2018.12.08</time>
 						</span>
 					</div>
 				</div>
@@ -1843,9 +1843,37 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>Wow, This looks cool! </p>
-<p>Let me tell you a fact, that Hexo is totally cool! To start with, I&#x2019;m writing my blog with the <strong>Hexo Admin</strong> plugin. This blog is build with cool new features, far more than I can list out here. </p>
-<p>Guys, this will be the beginning of series of blog posts to handle Hexo Blogging. Not much to say right now. Till next time, Adios!</p>
+			  		<p>Writeup from hxp CTF&#x2019;18</p>
+<h1 id="hxp-CTF-2018-cat-flag"><a href="#hxp-CTF-2018-cat-flag" class="headerlink" title="hxp CTF 2018: cat flag"></a>hxp CTF 2018: cat flag</h1><p><strong>Category:</strong> Tro<br><strong>Challenge Points:</strong> 25<br><strong>Solves:</strong> 230+</p>
+<p><strong>Service:</strong> nc 116.203.19.157 13370</p>
+<p><strong>Description:</strong></p>
+<pre><code>Welcome to the hxp CTF 2018!
+
+hxp would like to to reward loyal customers with a special offer. *
+
+FREE SHELLS!!!
+
+PS: Just cat flag and no hacks please :/
+
+* Only while supplies last, limited to one per household
+</code></pre><p>Oh, and a nice welcome message as soon as we connect! </p>
+<div class="amp-img-wrapper"><amp-img src="/2018/12/08/Writeups/cat-flag/shell.png" width="515" height="298" layout="responsive"></amp-img></div>
+<h3 id="The-challenge"><a href="#The-challenge" class="headerlink" title="The challenge"></a>The challenge</h3><p>The objective was crystal clear. <code>cat flag</code>. The first thing I did was <code>ls -l</code> and got flag file with <code>222</code> permission. </p>
+<div class="amp-img-wrapper"><amp-img src="/2018/12/08/Writeups/cat-flag/ls.png" width="359" height="47" layout="responsive"></amp-img></div>
+<p>Seemed pretty easy first, but the command were heavily limitted to </p>
+<blockquote>
+<p>cat<br>ls<br>sh</p>
+</blockquote>
+<p>Although basic <code>echo</code> and <code>cd</code> was working pretty well. </p>
+<h3 id="After-hours"><a href="#After-hours" class="headerlink" title="After hours"></a>After hours</h3><p>To my luck, <code>read</code> was the clandestine command I was looking for.</p>
+<pre><code class="bash">read -r f &lt; flag
+cat $f
+</code></pre>
+<p>Put that right into the shell and grab the flag. Simple :)<br></p><div class="amp-img-wrapper"><amp-img src="/2018/12/08/Writeups/cat-flag/flag.png" width="642" height="91" layout="responsive"></amp-img></div>
+<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><blockquote>
+<p>hxp{You_escaped_from_ANSI}</p>
+</blockquote>
+<p>I still don&#x2019;t know why I spent hours going through the /tmp and /usr files. </p>
 
 			  		
 			  		<!-- google Adsense -->
@@ -1873,8 +1901,8 @@ h6.categories {
 						<ul class="article-tag-list">
 							
 					    		<li class="article-tag-list-item">
-					    			<a class="article-tag-list-link" href="/tags/hexo/">
-					    				hexo
+					    			<a class="article-tag-list-link" href="/tags/Troll-bash-cat-flag-permissions/">
+					    				Troll, bash, cat flag, permissions
 					    			</a>
 					    		</li>
 							

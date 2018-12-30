@@ -2,93 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/</loc>
-    
-    <lastmod>2018-12-09T12:27:40.284Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>sayoojsamuel.github.io/2018/09/09/Writeups/chopsuey/</loc>
-    
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/</loc>
-    
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>sayoojsamuel.github.io/2018/09/16/Writeups/babycrypto/</loc>
-    
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>sayoojsamuel.github.io/2018/09/16/Writeups/flatcrypto/</loc>
     
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
+    <lastmod>2018-12-30T12:52:32.669Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/12/08/Writeups/cat-flag/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.669Z</lastmod>
     
   </url>
   
   <url>
     <loc>sayoojsamuel.github.io/2018/09/14/Writeups/marty0ska1/</loc>
     
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
+    <lastmod>2018-12-30T12:52:32.669Z</lastmod>
     
   </url>
   
   <url>
     <loc>sayoojsamuel.github.io/2018/10/26/Writeups/pyQueue/</loc>
     
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
+    <lastmod>2018-12-30T12:52:32.669Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/12/30/Writeups/pretty-linear/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.669Z</lastmod>
     
   </url>
   
   <url>
     <loc>sayoojsamuel.github.io/2018/10/26/Writeups/tile-mate/</loc>
     
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
+    <lastmod>2018-12-30T12:52:32.669Z</lastmod>
     
   </url>
   
   <url>
-    <loc>sayoojsamuel.github.io/2018/11/01/Web/php/How%20to%20access%20PHP%20from%20Home/</loc>
+    <loc>sayoojsamuel.github.io/2018/09/09/Writeups/chopsuey/</loc>
     
-    <lastmod>2018-12-08T20:33:32.400Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>sayoojsamuel.github.io/2018/09/12/Articles/encoding/</loc>
-    
-    <lastmod>2018-12-08T20:33:32.396Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>sayoojsamuel.github.io/2018/11/13/Tools/Soul-Keybase/</loc>
-    
-    <lastmod>2018-12-08T20:33:32.396Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>sayoojsamuel.github.io/2018/08/26/Principium/</loc>
-    
-    <lastmod>2018-12-08T20:33:32.396Z</lastmod>
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
     
   </url>
   
   <url>
     <loc>sayoojsamuel.github.io/2018/11/02/CSS-Test/</loc>
     
-    <lastmod>2018-12-08T20:33:32.396Z</lastmod>
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/08/26/Principium/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/09/12/Articles/encoding/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/10/28/Hexo/Site-Updated/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/11/13/Tools/Soul-Keybase/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/09/16/Writeups/babycrypto/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>sayoojsamuel.github.io/2018/11/01/Web/php/How%20to%20access%20PHP%20from%20Home/</loc>
+    
+    <lastmod>2018-12-30T12:52:32.365Z</lastmod>
     
   </url>
   

@@ -28,11 +28,11 @@ var precacheUrls = [];
 
   precacheUrls.push('/2018/11/02/CSS-Test/');
 
+  precacheUrls.push('/2018/12/30/Writeups/pretty-linear/');
+
   precacheUrls.push('/2018/11/13/Tools/Soul-Keybase/');
 
   precacheUrls.push('/2018/11/01/Web/php/How to access PHP from Home/');
-
-  precacheUrls.push('/2018/10/28/Hexo/Site-Updated/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
